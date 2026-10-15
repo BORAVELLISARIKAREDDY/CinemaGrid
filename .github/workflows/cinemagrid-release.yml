@@ -232,7 +232,7 @@ jobs:
       - name: Write checksums
         working-directory: dist/release
         run: |
-          sha256sum * >SHA256SUMS.txt
+          sha256sum ./* >SHA256SUMS.txt
           cat SHA256SUMS.txt
       - name: Create or update the release
         env:
