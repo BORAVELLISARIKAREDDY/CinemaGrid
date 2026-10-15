@@ -14,7 +14,7 @@ There are two pipelines:
 - **This fork (unsigned).** `.github/workflows/cinemagrid-release.yml` is self-contained: it runs
   the same packaging scripts *unsigned* on GitHub's macOS, Windows and Linux runners and attaches
   the artifacts to a GitHub Release. Run it from *Actions › Release (unsigned) › Run workflow*, or
-  push a tag (`git tag v0.8.0 && git push origin v0.8.0`). No secrets or certificates are required:
+  push a tag (`git tag v0.9.0 && git push origin v0.9.0`). No secrets or certificates are required:
   the macOS app is ad-hoc signed (not notarized, so users right-click ▸ Open the first time) and
   the Windows MSI is unsigned (SmartScreen warns on first run).
 
