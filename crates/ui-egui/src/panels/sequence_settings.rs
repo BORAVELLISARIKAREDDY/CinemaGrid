@@ -15,7 +15,7 @@
 //! Pixel Aspect Ratio (rendered, and set by New Sequence From Clip, but not editable here yet), Fields, the Frames and Feet + Frames display
 //! formats, Number of Channels, audio Display Format, the Video Previews format, codec and size,
 //! Maximum Bit Depth, and the VR Properties tab. Composite in Linear Color is shown on and greyed:
-//! FilmCraft always composites in linear light.
+//! CinemaGrid always composites in linear light.
 //!
 //! Automation ids (`sequenceSettings.` + …): `tab.general`, `tab.color`, `tab.vr`; General:
 //! `name`, `editingMode`, `timebase` (+ `timebase.option.<num>/<den>` while open), `width`, `height`,
@@ -35,8 +35,8 @@ use crate::FilmcraftApp;
 use crate::i18n::t;
 use crate::state::SequenceSettingsDraft;
 
-const NOT_YET: &str = "Not supported in FilmCraft yet";
-const LINEAR: &str = "FilmCraft always composites in linear light";
+const NOT_YET: &str = "Not supported in CinemaGrid yet";
+const LINEAR: &str = "CinemaGrid always composites in linear light";
 
 /// The Timebase list (frames per second as num/den), Premiere's common rates.
 const TIMEBASES: [(i64, i64); 15] = [

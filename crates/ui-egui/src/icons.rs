@@ -122,6 +122,8 @@ pub enum Icon {
     Moon,
     /// Colour parameters: pick a colour from the Program monitor (a pipette).
     Eyedropper,
+    /// CinemaGrid brand emblem: a cinema viewfinder enclosing a precision timeline C-G grid.
+    CinemaGrid,
 }
 
 pub struct Pen16<'a> {
@@ -770,6 +772,17 @@ pub fn paint(painter: &Painter, rect: Rect, icon: Icon, color: Color32) {
             pen.line(&[(9.5, 7.5), (3.5, 12.5)]);
             pen.line(&[(3.5, 12.5), (2.5, 13.5)]);
         }
+        CinemaGrid => {
+            // Cinema viewfinder brackets
+            pen.line(&[(2.5, 5.0), (2.5, 2.5), (5.0, 2.5)]);
+            pen.line(&[(11.0, 2.5), (13.5, 2.5), (13.5, 5.0)]);
+            pen.line(&[(2.5, 11.0), (2.5, 13.5), (5.0, 13.5)]);
+            pen.line(&[(11.0, 13.5), (13.5, 13.5), (13.5, 11.0)]);
+            // Sweeping C-G curve
+            pen.line(&[(10.5, 5.5), (7.0, 5.5), (5.0, 8.0), (7.0, 10.5), (10.5, 10.5), (10.5, 8.0), (8.0, 8.0)]);
+            // Grid playhead
+            pen.line(&[(8.0, 6.0), (8.0, 10.0)]);
+        }
     }
 }
 
@@ -903,6 +916,7 @@ mod tests {
         Network,
         Clock,
         Eyedropper,
+        CinemaGrid,
     ];
 
     /// Paint `icon` at `ppp` device pixels per point into a rect of `size` points whose corner is
