@@ -1,9 +1,9 @@
-CinemaGrid app icon (filmcraft.svg and every file derived from it in this directory:
-filmcraft-small.svg, filmcraft-1024.png, filmcraft-macos-512.png, filmcraft.icns, filmcraft.ico,
+CinemaGrid app icon (cinemagrid.svg and every file derived from it in this directory:
+cinemagrid-small.svg, cinemagrid-1024.png, cinemagrid-macos-512.png, cinemagrid.icns, cinemagrid.ico,
 hicolor/, and apps/filmcraft-web/web/favicon.png).
 
-Original artwork made for this project by the CinemaGrid owner (Brandon Thomas) in ArtCraft, then
-vectorised. No third-party material. Licensed like the rest of CinemaGrid, under either of
+Original artwork made for this project by @BORAVELLISARIKAREDDY, then vectorised. No third-party
+material. Licensed like the rest of CinemaGrid, under either of:
 
   * Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
   * MIT license (https://opensource.org/licenses/MIT)

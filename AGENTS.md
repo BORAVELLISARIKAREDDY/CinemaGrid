@@ -86,12 +86,10 @@ reproduce an image (for example, point lists traced from someone else's icon).
    `crates/media`, procedural looks in `crates/render`) are original work under the project licence
    and are listed in `ATTRIBUTION.md`.
 7. **When in doubt, leave it out** and draw or generate it yourself.
-8. **The one exception: first-party ArtCraft brand marks.** The ArtCraft name and logos in `docs/brand/`
-   are trademarks of the ArtCraft Team, not open source, usable only unmodified and only in the context of
-   CinemaGrid under `docs/brand/LICENSE-brand.txt`; forks and modified versions must remove them. They still
-   need a sidecar and an `ATTRIBUTION.md` row (licence `LicenseRef-ArtCraft-Trademark`). No other
-   non-open asset is allowed, and this exception never covers third-party marks (Adobe, Discord, GitHub
-   and other logos stay out; draw a generic icon instead).
+8. **First-party CinemaGrid brand marks.** The CinemaGrid name, wordmark and icon in `docs/brand/` are
+   original work by the project owner, licensed under the project licence (MIT OR Apache-2.0) like the
+   rest of CinemaGrid. They still need a sidecar and an `ATTRIBUTION.md` row. No non-open asset is
+   allowed: third-party marks (Adobe, GitHub and other logos) stay out; draw a generic icon instead.
 9. **Fonts live in [storytold/craft-fonts](https://github.com/storytold/craft-fonts), never in this
    repo.** Don't commit new font files (the small Latin UI fonts already in `assets/fonts/` stay). A
    font CinemaGrid needs is added to craft-fonts, which the app reads through the optional build input

@@ -100,19 +100,19 @@ impl Mcp {
     /// Start the headless server (an empty project) and initialise the session. `data_dir` keeps
     /// user presets away from the real data directory.
     fn start(data_dir: &str) -> Self {
-        let mut child = Command::new(env!("CARGO_BIN_EXE_filmcraft-cli"))
+        let mut child = Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli"))
             .args(["--data-dir", data_dir, "mcp"])
             .stdin(Stdio::piped())
             .stdout(Stdio::piped())
             .stderr(Stdio::null())
             .spawn()
-            .expect("spawn filmcraft-cli mcp");
+            .expect("spawn cinemagrid-cli mcp");
         let stdin = child.stdin.take().unwrap();
         let stdout = BufReader::new(child.stdout.take().unwrap());
         let mut m = Mcp { child, stdin, stdout, next_id: 1 };
         let init =
             m.request("initialize", json!({"protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "workflow-tests", "version": "1"}}));
-        assert_eq!(init["result"]["serverInfo"]["name"], "filmcraft", "{init}");
+        assert_eq!(init["result"]["serverInfo"]["name"], "cinemagrid", "{init}");
         m.send(&json!({"jsonrpc": "2.0", "method": "notifications/initialized"}));
         m
     }
@@ -424,7 +424,7 @@ fn camera_long_gop_two_audio_tracks_trim_dissolve_to_prores() {
 
     // a fresh process opens the saved project and renders it
     let out = dir.path("camera_edit.mov");
-    let o = Command::new(env!("CARGO_BIN_EXE_filmcraft-cli")).args(["--data-dir", &data, "--project", &project, "export", &out]).output().unwrap();
+    let o = Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli")).args(["--data-dir", &data, "--project", &project, "export", &out]).output().unwrap();
     assert!(o.status.success(), "export: {}", String::from_utf8_lossy(&o.stderr));
     let r: Value = serde_json::from_slice(&o.stdout).unwrap();
     let total = 71 + 50;
@@ -482,7 +482,7 @@ fn camera_long_gop_two_audio_tracks_trim_dissolve_to_prores() {
 /// `endFrame` of the first clip on V1 of the saved project's active sequence, read back through
 /// `filmcraft-cli --project … inspect sequence`.
 fn end_frame_of(project: &str) -> Option<u64> {
-    let o = Command::new(env!("CARGO_BIN_EXE_filmcraft-cli")).args(["--project", project, "inspect", "sequence"]).output().ok()?;
+    let o = Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli")).args(["--project", project, "inspect", "sequence"]).output().ok()?;
     let v: Value = serde_json::from_slice(&o.stdout).ok()?;
     v["video"][0]["items"][0]["endFrame"].as_u64()
 }

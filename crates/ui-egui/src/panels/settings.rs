@@ -1053,7 +1053,7 @@ mod tests {
         app.apply_prefs(&ctx);
         assert_eq!(app.tokens.kind, ThemeKind::Light);
         assert!(!app.ui.dark);
-        assert_eq!(ctx.theme(), egui::Theme::Light, "egui's style follows FilmCraft's choice");
+        assert_eq!(ctx.theme(), egui::Theme::Light, "egui's style follows CinemaGrid's choice");
         system.store(1, Ordering::Relaxed);
         app.apply_prefs(&ctx);
         assert_eq!(app.tokens.kind, ThemeKind::Dark);

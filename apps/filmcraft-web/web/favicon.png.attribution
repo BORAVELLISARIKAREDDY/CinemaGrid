@@ -5,4 +5,4 @@ source:       original work (CinemaGrid brand mark drawn by the contributor)
 license:      MIT OR Apache-2.0
 license-file: assets/app-icon/LICENSE.txt
 added:        2026-10-14 by bsarika
-notes:        Rendered from assets/app-icon/filmcraft.svg with resvg by packaging/icons.sh.
+notes:        Rendered from assets/app-icon/cinemagrid.svg with resvg by packaging/icons.sh.

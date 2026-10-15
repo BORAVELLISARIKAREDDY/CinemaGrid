@@ -4,7 +4,7 @@ description = "CinemaGrid desktop app"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
-default-run = "filmcraft"
+default-run = "cinemagrid"
 build = "build.rs"
 
 [lints]
@@ -16,6 +16,12 @@ default = []
 whisper = ["filmcraft-engine/whisper", "filmcraft-engine/speech-download"]
 # Natural Text to Speech voices (Kokoro-82M on the CPU, downloaded on first use).
 neural-voices = ["filmcraft-engine/neural-voices"]
+
+# The crate keeps its `filmcraft` name (imports, `-p filmcraft`), but the shipped executable is
+# `cinemagrid` (packaging, desktop entries, MSI and the docs all use that name).
+[[bin]]
+name = "cinemagrid"
+path = "src/main.rs"
 
 [dependencies]
 filmcraft-engine = { workspace = true }
@@ -36,7 +42,7 @@ cpal = "0.16"
 arboard = "3"
 chrono = { version = "0.4", default-features = false, features = ["clock"] }
 sys-locale = "0.3"
-# Help menu / About / Discord links in the system browser (MIT; as PhotoCraft).
+# Help menu / About / header links in the system browser (MIT).
 open = "5"
 
 [dev-dependencies]
@@ -57,6 +63,6 @@ winit = { version = "0.30", default-features = false }
 # portal file dialogs (rfd) and accesskit already use.
 zbus = "5.19"
 
-# Icon + VERSIONINFO for filmcraft.exe (build.rs); only needed when building on Windows.
+# Icon + VERSIONINFO for cinemagrid.exe (build.rs); only needed when building on Windows.
 [target.'cfg(windows)'.build-dependencies]
 winresource = "0.1"

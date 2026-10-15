@@ -1,8 +1,8 @@
-asset:        ai.storyteller.filmcraft.png
-title:        CinemaGrid app icon, Linux hicolor theme 256 px
+asset:        io.github.boravellisarikareddy.cinemagrid.png
+title:        CinemaGrid app icon, Linux hicolor theme 32 px
 author:       bsarika (CinemaGrid contributor)
 source:       original work (CinemaGrid brand mark drawn by the contributor)
 license:      MIT OR Apache-2.0
 license-file: assets/app-icon/LICENSE.txt
 added:        2026-10-14 by bsarika
-notes:        Rendered from filmcraft.svg with resvg by packaging/icons.sh.
+notes:        Rendered from cinemagrid.svg with resvg by packaging/icons.sh.

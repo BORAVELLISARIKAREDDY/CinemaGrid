@@ -1058,7 +1058,7 @@ impl Exp<'_, '_> {
                 }
                 s.push_str(&format!("</{tag}>"));
             }
-            self.report.info(format!("effect \"{n}\" written as an FCPXML filter reference (FilmCraft-specific)"));
+            self.report.info(format!("effect \"{n}\" written as an FCPXML filter reference (CinemaGrid-specific)"));
             children.push(s);
         }
         if !primary || kind == TrackKind::Audio {

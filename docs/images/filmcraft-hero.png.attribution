@@ -41,7 +41,7 @@ Reproduction: download the four NASA files (the "~medium" MP4 renditions; the Fi
   target/demo-media/apollo11/src/; cut them into reels with ffmpeg used only as a fixture generator (crop the active picture,
   restore 4:3 from the horizontally stretched transfers, 1440x1080 30p H.264): R01 = B-roll 120 s +456 s, R02 = 660 s +320 s,
   R03 = 980 s +270 s, R04 = 1300 s +420 s, R05 = 1740 s +230 s, Firing Room = 0 s +420 s, OTV countdown = HM_0083 2340 s +426 s,
-  EVA montage = whole file. Run `filmcraft --control <port>` and drive it with the scripts kept (not committed) in
+  EVA montage = whole file. Run `cinemagrid --control <port>` and drive it with the scripts kept (not committed) in
   target/demo-media/apollo11/scripts/: build.py (bins, imports, 1920x1080 30p sequence, 49 V1 cuts), build2.py (V2 cutaways,
   A2 mission audio, A3 music, track names, dissolves and audio fades), build3.py (titles with graphics.newText/graphics.set,
   caption track from the transcript, markers), build_fixups.py A, build4.py (Lumetri grades, motion/exposure keyframes,

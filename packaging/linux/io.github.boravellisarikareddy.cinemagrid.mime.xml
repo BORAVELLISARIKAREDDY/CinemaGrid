@@ -6,7 +6,7 @@
   <mime-type type="application/x-filmcraft">
     <comment>CinemaGrid project</comment>
     <sub-class-of type="application/json"/>
-    <icon name="ai.storyteller.filmcraft"/>
+    <icon name="io.github.boravellisarikareddy.cinemagrid"/>
     <glob pattern="*.fcproj"/>
   </mime-type>
 </mime-info>

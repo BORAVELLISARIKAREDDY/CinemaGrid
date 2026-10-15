@@ -1,11 +1,11 @@
 {
   "mcpServers": {
-    "filmcraft": {
-      "command": "target/release/filmcraft-cli",
+    "cinemagrid": {
+      "command": "target/release/cinemagrid-cli",
       "args": ["mcp", "--bridge", "127.0.0.1:9876"]
     },
-    "filmcraft-headless": {
-      "command": "target/release/filmcraft-cli",
+    "cinemagrid-headless": {
+      "command": "target/release/cinemagrid-cli",
       "args": ["mcp", "--demo"]
     }
   }

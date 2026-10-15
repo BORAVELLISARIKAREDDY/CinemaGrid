@@ -1,8 +1,8 @@
-# Where FilmCraft falls short of Premiere Pro
+# Where CinemaGrid falls short of Premiere Pro
 
 > **Last reviewed:** 2026-10-10 · **Last updated:** 2026-10-10 · **Change:** major (new file: ROADMAP's "Where we are lacking" re-measured against Premiere Pro 26.5.2 and the open issue list) · **Target:** Adobe Premiere Pro 2026 (26.5.2)
 
-Every known shortfall, one entry each, ranked by what most stops an editor using FilmCraft for real
+Every known shortfall, one entry each, ranked by what most stops an editor using CinemaGrid for real
 work. This is the work list: agents should prefer it over adding checklist items. Numbers are in
 [target-app-parity.md](target-app-parity.md); estimates are Opus 5.5 agent-hours, calibrated there.
 When you close or shrink a gap, update its entry, its parity doc and the revision history.
@@ -39,7 +39,7 @@ platforms** G4, G9, G17; **performance** G16; **ecosystem** G11; **measurement**
 
 - **Missing:** a fidelity harness. Every effect, transition, Lumetri control, blend mode, keyframe
   interpolation and audio effect counts once it exists; nothing renders the same project in
-  Premiere and FilmCraft and compares frames or samples. Effects described as approximations
+  Premiere and CinemaGrid and compares frames or samples. Effects described as approximations
   count the same as exact ones.
 - **Evidence:** catalogue tests check names and folders only. EffectCraft's live After Effects
   comparison (its gaps.md G1) found real bugs in features marked done on its first run.
@@ -120,7 +120,7 @@ platforms** G4, G9, G17; **performance** G16; **ecosystem** G11; **measurement**
 ## G6. No real-world media corpus or workflow acceptance tests
 
 - **Done:** first scripted MCP workflows (#835, `apps/filmcraft-cli/tests/workflows.rs`): the
-  `filmcraft-cli mcp` binary imports ffmpeg-made phone-like VFR H.264 + AAC MP4 and long-GOP
+  `cinemagrid-cli mcp` binary imports ffmpeg-made phone-like VFR H.264 + AAC MP4 and long-GOP
   H.264 Matroska with two audio tracks (AAC, AC-3), edits (extract, audio gain, title; ripple
   trims, colour matte, cross dissolve), exports H.264 MP4, and saves a project that a new process
   exports as ProRes; ffprobe / ffmpeg check streams, frame count, duration, frame placement, A/V
@@ -170,7 +170,7 @@ platforms** G4, G9, G17; **performance** G16; **ecosystem** G11; **measurement**
 
 - **Have:** files given at launch (terminal, Open With, file associations) open whatever the case
   of `.fcproj` and are made absolute, and arguments that are not Unicode no longer stop the start;
-  `filmcraft-cli import` stores no Windows `\\?\` paths (#850).
+  `cinemagrid-cli import` stores no Windows `\\?\` paths (#850).
 - **Missing:** routine runtime testing off macOS. Linux playback stutter (#617), Wayland title
   bar (#433), case-sensitive extensions (#593), "Report an issue" link (#642), Windows bins cannot
   be left (#587), Sequence Settings won't open on Windows (#586, #351), old hardware (#491).

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Build, sign and (optionally) notarize the macOS release artifacts:
 #
-#   $DIST/filmcraft-<version>-macos-<arch>.dmg          CinemaGrid.app on a drag-to-Applications DMG
-#   $DIST/filmcraft-cli-<version>-macos-<arch>.zip      the headless CLI
+#   $DIST/cinemagrid-<version>-macos-<arch>.dmg          CinemaGrid.app on a drag-to-Applications DMG
+#   $DIST/cinemagrid-cli-<version>-macos-<arch>.zip      the headless CLI
 #
 # Usage: packaging/macos/package.sh [--arch universal|aarch64|x86_64] [--skip-build]
 #
@@ -40,8 +40,8 @@ IDENTITY="${MACOS_SIGN_IDENTITY:--}"
 SHORT_VERSION="${VERSION%%-*}"
 WORK="$CARGO_TARGET_DIR/macos-package"
 APP="$WORK/CinemaGrid.app"
-DMG="$DIST/filmcraft-$VERSION-macos-$ARCH.dmg"
-CLI_ZIP="$DIST/filmcraft-cli-$VERSION-macos-$ARCH.zip"
+DMG="$DIST/cinemagrid-$VERSION-macos-$ARCH.dmg"
+CLI_ZIP="$DIST/cinemagrid-cli-$VERSION-macos-$ARCH.zip"
 
 NOTARIZE=0
 if [ "$IDENTITY" = "-" ]; then
@@ -63,7 +63,7 @@ fi
 
 rm -rf "$WORK"
 mkdir -p "$WORK/bin"
-for bin in filmcraft filmcraft-cli; do
+for bin in cinemagrid cinemagrid-cli; do
   inputs=()
   for t in "${TARGETS[@]}"; do inputs+=("$CARGO_TARGET_DIR/$t/release/$bin"); done
   lipo -create -output "$WORK/bin/$bin" "${inputs[@]}"
@@ -101,8 +101,8 @@ notarize() {
 echo "==> assembling $APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 # Executable and icon carry the display name (CFBundleExecutable / CFBundleIconFile).
-cp "$WORK/bin/filmcraft" "$APP/Contents/MacOS/CinemaGrid"
-cp "$ROOT/assets/app-icon/filmcraft.icns" "$APP/Contents/Resources/CinemaGrid.icns"
+cp "$WORK/bin/cinemagrid" "$APP/Contents/MacOS/CinemaGrid"
+cp "$ROOT/assets/app-icon/cinemagrid.icns" "$APP/Contents/Resources/CinemaGrid.icns"
 sed -e "s/@VERSION@/$VERSION/g" -e "s/@SHORT_VERSION@/$SHORT_VERSION/g" \
   -e "s/@BUILD_SHA@/${FILMCRAFT_BUILD_SHA:-unknown}/g" \
   "$HERE/Info.plist.in" >"$APP/Contents/Info.plist"
@@ -153,17 +153,17 @@ fi
 
 # ---- CLI ---------------------------------------------------------------------------------------
 echo "==> building $CLI_ZIP"
-CLI_DIR="$WORK/filmcraft-cli-$VERSION-macos-$ARCH"
+CLI_DIR="$WORK/cinemagrid-cli-$VERSION-macos-$ARCH"
 mkdir -p "$CLI_DIR"
-cp "$WORK/bin/filmcraft-cli" "$CLI_DIR/"
+cp "$WORK/bin/cinemagrid-cli" "$CLI_DIR/"
 copy_docs "$CLI_DIR"
-sign --options runtime "$CLI_DIR/filmcraft-cli"
-codesign --verify --strict --verbose=2 "$CLI_DIR/filmcraft-cli"
+sign --options runtime "$CLI_DIR/cinemagrid-cli"
+codesign --verify --strict --verbose=2 "$CLI_DIR/cinemagrid-cli"
 rm -f "$CLI_ZIP"
 ditto -c -k --keepParent "$CLI_DIR" "$CLI_ZIP"
 # A bare Mach-O can't carry a stapled ticket; Gatekeeper looks the notarization up online.
 if [ "$NOTARIZE" = 1 ]; then notarize "$CLI_ZIP"; fi
 
-"$WORK/bin/filmcraft-cli" --version
+"$WORK/bin/cinemagrid-cli" --version
 echo "==> done"
 ls -lh "$DMG" "$CLI_ZIP"

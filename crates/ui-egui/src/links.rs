@@ -1,30 +1,18 @@
-//! Community and project links (Help menu, About dialog, header Discord button, Home screen).
+//! Community and project links (Help menu, About dialog, header GitHub button, Home screen).
 //!
-//! FilmCraft is part of the ArtCraft family: the community lives on the ArtCraft Discord, every
-//! app has a page on the ArtCraft website and a public GitHub repository.
+//! CinemaGrid's community lives on GitHub: the source code, the releases and the issue tracker are
+//! all in the project's repository.
 
-/// The app's short name, used in the website and repository URLs.
-pub const APP: &str = "filmcraft";
+/// The app's short name, used in repository URLs.
+pub const APP: &str = "cinemagrid";
 
-/// The ArtCraft community Discord.
-pub const DISCORD: &str = "https://discord.gg/artcraft";
-/// The ArtCraft website.
-pub const WEBSITE: &str = "https://getartcraft.com";
-/// FilmCraft's page on the ArtCraft website.
-pub const APP_PAGE: &str = "https://getartcraft.com/apps/filmcraft";
-/// FilmCraft's source repository.
-pub const GITHUB: &str = "https://github.com/storytold/filmcraft";
-/// New issue on FilmCraft's repository.
-pub const ISSUES: &str = "https://github.com/storytold/filmcraft/issues";
+/// CinemaGrid's source repository.
+pub const GITHUB: &str = "https://github.com/BORAVELLISARIKAREDDY/cinemagrid";
+/// New issue on CinemaGrid's repository.
+pub const ISSUES: &str = "https://github.com/BORAVELLISARIKAREDDY/cinemagrid/issues";
 
 /// (command id, label, url) for every link, in menu order.
-pub const ALL: [(&str, &str, &str); 5] = [
-    ("help.discord", "Join the ArtCraft Discord…", DISCORD),
-    ("help.website", "ArtCraft Website", WEBSITE),
-    ("help.appPage", "CinemaGrid on getartcraft.com", APP_PAGE),
-    ("help.github", "CinemaGrid on GitHub", GITHUB),
-    ("help.reportIssue", "Report an Issue…", ISSUES),
-];
+pub const ALL: [(&str, &str, &str); 2] = [("help.github", "CinemaGrid on GitHub", GITHUB), ("help.reportIssue", "Report an Issue…", ISSUES)];
 
 /// A link the web browser couldn't open (`ui.failedLink`): the address and the reason.
 #[derive(Clone, Debug, Default, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -39,7 +27,7 @@ pub fn url_for(command: &str) -> Option<&'static str> {
 }
 
 /// What a Help menu item does, shown when the pointer rests on it: the address a link opens in
-/// the web browser, or that the item stays inside FilmCraft.
+/// the web browser, or that the item stays inside CinemaGrid.
 pub fn menu_hint(command: &str) -> Option<String> {
     let url = if command == "help.filmcraftHelp" { Some(crate::panels::keyboard::HELP_URL) } else { url_for(command) };
     if let Some(url) = url {
@@ -125,17 +113,17 @@ mod tests {
     use super::*;
 
     #[test]
-    fn urls_follow_the_artcraft_scheme() {
-        assert_eq!(APP_PAGE, format!("{WEBSITE}/apps/{APP}"));
-        assert_eq!(GITHUB, format!("https://github.com/storytold/{APP}"));
+    fn urls_point_at_the_project_repository() {
+        assert_eq!(GITHUB, format!("https://github.com/BORAVELLISARIKAREDDY/{APP}"));
+        assert_eq!(ISSUES, format!("{GITHUB}/issues"));
         assert!(ALL.iter().all(|(id, _, u)| id.starts_with("help.") && u.starts_with("https://")));
-        assert_eq!(url_for("help.discord"), Some(DISCORD));
+        assert_eq!(url_for("help.github"), Some(GITHUB));
         assert_eq!(url_for("help.nope"), None);
     }
 
     #[test]
     fn links_open_through_the_host_hook() {
-        // #642: on the desktop every link (Help menu, About, Discord button, Import screen) must
+        // #642: on the desktop every link (Help menu, About, header button, Import screen) must
         // reach the host's browser opener; `ctx.open_url` alone is a no-op natively.
         use std::cell::RefCell;
         use std::rc::Rc;
@@ -152,8 +140,8 @@ mod tests {
             assert_eq!(r["url"], url, "{id}");
             assert_eq!(opened.borrow().last().map(String::as_str), Some(url), "{id}");
         }
-        open(&mut app, &ctx, DISCORD);
-        assert_eq!(opened.borrow().last().map(String::as_str), Some(DISCORD));
+        open(&mut app, &ctx, GITHUB);
+        assert_eq!(opened.borrow().last().map(String::as_str), Some(GITHUB));
         assert_eq!(opened.borrow().len(), ALL.len() + 1);
 
         // A failing opener falls back to `ctx.open_url` instead of losing the click.

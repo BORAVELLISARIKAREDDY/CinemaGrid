@@ -1,7 +1,7 @@
 # Hosting CinemaGrid for the web
 
-`filmcraft-web-<version>.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a
-static site in `filmcraft-web-<version>/`:
+`cinemagrid-web-<version>.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a
+static site in `cinemagrid-web-<version>/`:
 
 | File | What it is |
 |---|---|
@@ -15,7 +15,7 @@ There is no server-side code. Upload the folder's contents anywhere that serves 
 ## Any path works
 
 All URLs in `index.html` are relative, so the site works at a domain root
-(`https://example.com/`), under a prefix (`https://example.com/tools/filmcraft/`) and from a CDN
+(`https://example.com/`), under a prefix (`https://example.com/tools/cinemagrid/`) and from a CDN
 bucket. The assets carry a content
 hash in their URL (`index.html` loads them with `?v=<build hash>`), so they can be cached
 forever. Only `index.html` needs revalidation.
@@ -41,7 +41,7 @@ forever. Only `index.html` needs revalidation.
 nginx example:
 
 ```nginx
-location /filmcraft/ {
+location /cinemagrid/ {
     types { application/wasm wasm; text/javascript js; text/html html; }
     gzip on;
     gzip_types application/wasm text/javascript text/html;
@@ -56,7 +56,7 @@ Local test: `python3 -m http.server 8765` inside the folder, then open http://lo
 
 ```html
 <iframe
-  src="https://example.com/filmcraft/"
+  src="https://example.com/cinemagrid/"
   title="CinemaGrid video editor"
   style="width: 100%; height: 720px; border: 0;"
   allow="fullscreen; clipboard-read; clipboard-write"
@@ -86,6 +86,6 @@ CinemaGrid renders with wgpu. It uses **WebGPU** when the browser has it and fal
 | `?webgl` | Force the WebGL2 backend (useful when a WebGPU driver misbehaves). The page reloads with it by itself when WebGPU is present but fails to start |
 | `?cpu` | Force the CPU canvas path (slowest, most compatible) |
 
-For example: `<iframe src="https://example.com/filmcraft/?webgl" ...>`.
+For example: `<iframe src="https://example.com/cinemagrid/?webgl" ...>`.
 
 A browser with neither WebGPU nor WebGL2 gets a message in place of the app.

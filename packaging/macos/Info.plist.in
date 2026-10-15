@@ -13,7 +13,7 @@
   <key>CFBundleExecutable</key>
   <string>CinemaGrid</string>
   <key>CFBundleIdentifier</key>
-  <string>ai.storyteller.filmcraft</string>
+  <string>io.github.boravellisarikareddy.cinemagrid</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundlePackageType</key>
@@ -62,17 +62,17 @@
       <string>Owner</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>ai.storyteller.filmcraft.project</string>
+        <string>io.github.boravellisarikareddy.cinemagrid.project</string>
       </array>
     </dict>
   </array>
 
-  <!-- Filmcraft's own format. -->
+  <!-- CinemaGrid's own format. -->
   <key>UTExportedTypeDeclarations</key>
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>ai.storyteller.filmcraft.project</string>
+      <string>io.github.boravellisarikareddy.cinemagrid.project</string>
       <key>UTTypeDescription</key>
       <string>CinemaGrid Project</string>
       <key>UTTypeConformsTo</key>

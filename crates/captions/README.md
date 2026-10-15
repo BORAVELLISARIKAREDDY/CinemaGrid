@@ -1,6 +1,6 @@
 # filmcraft-captions
 
-Caption files and caption burn-in for FilmCraft (layer L2: depends on `filmcraft-time`,
+Caption files and caption burn-in for CinemaGrid (layer L2: depends on `filmcraft-time`,
 `filmcraft-color`, `filmcraft-project`, `filmcraft-text` and `roxmltree` for TTML).
 
 The caption *model* (caption tracks in a sequence, captions, track style) lives in
@@ -36,7 +36,7 @@ TTaf1 draft namespaces. Agent IDs use `xml:id`, except in the April draft, which
 `id`. Agent definitions from unrelated application metadata are ignored. Recognized `ttm:agent`
 attributes take precedence over the legacy local-name `agent` fallback. A full name is preferred,
 otherwise the first nonempty name (or an explicitly empty name) is used. Multiple agent references become one display label, joined with `, ` in
-reference order; the project does not retain the individual agent identities. Older FilmCraft
+reference order; the project does not retain the individual agent identities. Older CinemaGrid
 files without agent definitions remain readable through the previous underscore-to-space
 fallback. Other agent metadata, including actor relationships, is not retained.
 

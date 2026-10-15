@@ -6,7 +6,7 @@ use std::process::{Command, Output, Stdio};
 use serde_json::Value;
 
 fn cli(args: &[&str]) -> Output {
-    Command::new(env!("CARGO_BIN_EXE_filmcraft-cli")).args(args).output().expect("spawn filmcraft-cli")
+    Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli")).args(args).output().expect("spawn cinemagrid-cli")
 }
 
 fn json_out(o: &Output) -> Value {
@@ -29,7 +29,7 @@ fn help_and_usage_errors() {
 
 #[test]
 fn version_after_global_options() {
-    let want = format!("filmcraft-cli {}\n", env!("CARGO_PKG_VERSION"));
+    let want = format!("cinemagrid-cli {}\n", env!("CARGO_PKG_VERSION"));
     for args in [&["--version"][..], &["-V"], &["version"], &["--demo", "--version"], &["--compact", "-V"], &["--demo", "version"]] {
         let o = cli(args);
         assert!(o.status.success(), "{args:?}: {}", String::from_utf8_lossy(&o.stderr));
@@ -107,7 +107,7 @@ fn exec_save_as_then_reopen() {
     let tree = json_out(&cli(&["--project", p, "inspect", "project"]));
     assert!(tree.to_string().contains("CLI Selects"), "{tree}");
     // `run` from stdin, editing and saving back in place.
-    let mut child = Command::new(env!("CARGO_BIN_EXE_filmcraft-cli"))
+    let mut child = Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli"))
         .args(["--project", p, "--save", "run", "-"])
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
@@ -124,7 +124,7 @@ fn exec_save_as_then_reopen() {
 
 #[test]
 fn run_keep_going_reports_failures() {
-    let mut child = Command::new(env!("CARGO_BIN_EXE_filmcraft-cli"))
+    let mut child = Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli"))
         .args(["--demo", "--keep-going", "run", "-"])
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
@@ -251,7 +251,7 @@ fn export_with_presets() {
 fn closed_stdout_ends_quietly() {
     use std::io::Read;
     for args in [&["commands"][..], &["help"], &["--demo", "commands", "--json"]] {
-        let mut child = Command::new(env!("CARGO_BIN_EXE_filmcraft-cli")).args(args).stdout(Stdio::piped()).stderr(Stdio::piped()).spawn().unwrap();
+        let mut child = Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli")).args(args).stdout(Stdio::piped()).stderr(Stdio::piped()).spawn().unwrap();
         let mut first = [0u8; 10];
         child.stdout.as_mut().unwrap().read_exact(&mut first).unwrap();
         drop(child.stdout.take());
@@ -266,7 +266,7 @@ fn closed_stdout_ends_quietly() {
 /// still reports a failing command.
 fn run_with_closed_stdout(args: &[&str], script: &[u8]) -> Output {
     let mut child =
-        Command::new(env!("CARGO_BIN_EXE_filmcraft-cli")).args(args).stdin(Stdio::piped()).stdout(Stdio::piped()).stderr(Stdio::piped()).spawn().unwrap();
+        Command::new(env!("CARGO_BIN_EXE_cinemagrid-cli")).args(args).stdin(Stdio::piped()).stdout(Stdio::piped()).stderr(Stdio::piped()).spawn().unwrap();
     drop(child.stdout.take());
     child.stdin.take().unwrap().write_all(script).unwrap();
     child.wait_with_output().unwrap()

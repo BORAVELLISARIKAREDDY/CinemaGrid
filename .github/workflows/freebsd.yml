@@ -52,7 +52,7 @@ jobs:
             . "$HOME/.cargo/env"
             git config --global --add safe.directory "*"
             rustc --version
-            export CARGO_TARGET_DIR=/var/tmp/filmcraft-target CARGO_BUILD_JOBS=4
+            export CARGO_TARGET_DIR=/var/tmp/cinemagrid-target CARGO_BUILD_JOBS=4
             bash packaging/freebsd/package.sh
-            tar -tzf dist/release/filmcraft-*-freebsd-x86_64.tar.gz \
-              | grep -E '/bin/filmcraft$|/bin/filmcraft-cli$|/share/applications/ai\.storyteller\.filmcraft\.desktop$|/share/doc/filmcraft/LICENSE-MIT$'
+            tar -tzf dist/release/cinemagrid-*-freebsd-x86_64.tar.gz \
+              | grep -E '/bin/cinemagrid$|/bin/cinemagrid-cli$|/share/applications/io\.github\.boravellisarikareddy\.cinemagrid\.desktop$|/share/doc/cinemagrid/LICENSE-MIT$'

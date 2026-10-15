@@ -4,22 +4,22 @@
 #
 #   curl -fsSLO https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/cargo/flatpak-cargo-generator.py
 #   python3 flatpak-cargo-generator.py Cargo.lock -o packaging/linux/flatpak/cargo-sources.json
-#   flatpak-builder --user --install --force-clean build-flatpak packaging/linux/flatpak/ai.storyteller.filmcraft.yml
-#   flatpak run ai.storyteller.filmcraft
+#   flatpak-builder --user --install --force-clean build-flatpak packaging/linux/flatpak/io.github.boravellisarikareddy.cinemagrid.yml
+#   flatpak run io.github.boravellisarikareddy.cinemagrid
 #
 # The command-line tool and its MCP server run in the same sandbox, without opening a window:
 #
-#   flatpak run --command=filmcraft-cli ai.storyteller.filmcraft --version
-#   flatpak run --command=filmcraft-cli ai.storyteller.filmcraft mcp
+#   flatpak run --command=cinemagrid-cli io.github.boravellisarikareddy.cinemagrid --version
+#   flatpak run --command=cinemagrid-cli io.github.boravellisarikareddy.cinemagrid mcp
 #
 # For Flathub, replace the `dir` source with a `git` source pinned to a release tag and commit.
-id: ai.storyteller.filmcraft
+id: io.github.boravellisarikareddy.cinemagrid
 runtime: org.freedesktop.Platform
 runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: filmcraft
+command: cinemagrid
 finish-args:
   # X11 shared memory (MIT-SHM). Without it the X11 fallback is slow or fails.
   - --share=ipc
@@ -42,30 +42,30 @@ finish-args:
   - --filesystem=/run/media
   - --filesystem=/mnt
   # Deliberately not granted: network (the optional --control server listens on 127.0.0.1 in
-  # the sandbox; `flatpak override --user --share=network ai.storyteller.filmcraft` exposes it
+  # the sandbox; `flatpak override --user --share=network io.github.boravellisarikareddy.cinemagrid` exposes it
   # to host agents) and host-wide filesystem access.
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
 modules:
-  - name: filmcraft
+  - name: cinemagrid
     buildsystem: simple
     build-options:
       env:
-        CARGO_HOME: /run/build/filmcraft/cargo
+        CARGO_HOME: /run/build/cinemagrid/cargo
         CARGO_NET_OFFLINE: 'true'
     build-commands:
       - cargo --offline build --release --locked -p filmcraft -p filmcraft-cli
-      - install -Dm755 target/release/filmcraft /app/bin/filmcraft
+      - install -Dm755 target/release/cinemagrid /app/bin/cinemagrid
       # The headless CLI and its stdio MCP server, as in the release bundle (#346).
-      - install -Dm755 target/release/filmcraft-cli /app/bin/filmcraft-cli
-      - install -Dm644 packaging/linux/ai.storyteller.filmcraft.desktop /app/share/applications/ai.storyteller.filmcraft.desktop
-      - install -Dm644 packaging/linux/ai.storyteller.filmcraft.mime.xml /app/share/mime/packages/ai.storyteller.filmcraft.xml
+      - install -Dm755 target/release/cinemagrid-cli /app/bin/cinemagrid-cli
+      - install -Dm644 packaging/linux/io.github.boravellisarikareddy.cinemagrid.desktop /app/share/applications/io.github.boravellisarikareddy.cinemagrid.desktop
+      - install -Dm644 packaging/linux/io.github.boravellisarikareddy.cinemagrid.mime.xml /app/share/mime/packages/io.github.boravellisarikareddy.cinemagrid.xml
       - mkdir -p /app/share/icons && cp -R assets/app-icon/hicolor /app/share/icons/
       - >-
         version=$(awk '/^\[/{p=($0=="[workspace.package]");next} p&&$1=="version"{gsub(/[" ]/,"",$3);print $3;exit}' Cargo.toml);
         install -d /app/share/metainfo;
         sed -e "s/@VERSION@/$version/" -e "s/@DATE@/$(date -u +%Y-%m-%d)/"
-        packaging/linux/ai.storyteller.filmcraft.metainfo.xml.in > /app/share/metainfo/ai.storyteller.filmcraft.metainfo.xml
+        packaging/linux/io.github.boravellisarikareddy.cinemagrid.metainfo.xml.in > /app/share/metainfo/io.github.boravellisarikareddy.cinemagrid.metainfo.xml
     sources:
       - type: dir
         path: ../../..
