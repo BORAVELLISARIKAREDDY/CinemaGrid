@@ -33,3 +33,8 @@ jobs:
     with:
       app-name: filmcraft
       app-dir: CinemaGrid
+      # The crate is still `filmcraft`, but the shipped executables are `cinemagrid` /
+      # `cinemagrid-cli` (see apps/filmcraft/Cargo.toml); the shared workflow would otherwise
+      # look for `filmcraft.exe` / `filmcraft-cli.exe` after installing the MSI.
+      main-binary: cinemagrid.exe
+      cli-binary: cinemagrid-cli.exe
