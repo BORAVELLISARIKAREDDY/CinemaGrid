@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Regenerate every derived app icon from assets/app-icon/filmcraft.svg (the canonical artwork; a
-# 512-unit full-bleed tile with rx=112). filmcraft-small.svg is a lighter trace of the same drawing
-# and is copied, not generated.
+# Regenerate every derived app icon from assets/app-icon/filmcraft.svg (the canonical CinemaGrid
+# artwork; a 512-unit full-bleed tile with rx=112). filmcraft-small.svg is a lighter trace of the
+# same drawing (no backdrop grid, glow, blur or viewfinder details) and is copied, not generated.
 #
 # Needs: resvg (brew install resvg / cargo install resvg). On macOS, iconutil also writes the
 # .icns. The outputs are committed, so builds and packaging never need these tools.
