@@ -9,6 +9,8 @@ iconography, images or other Adobe assets; open licences only; every asset attri
 
 | Asset | Author | Source | Licence |
 |---|---|---|---|
+| `landing/assets/video/cinemagrid_showcase.mp4` | CinemaGrid contributors | Original work: procedural CinemaGrid showcase edit | MIT OR Apache-2.0 |
+| `landing/assets/images/poster.png` | CinemaGrid contributors | Original work: exported CinemaGrid showcase frame | MIT OR Apache-2.0 |
 | `crates/ui-egui/src/i18n/it.tsv` | CinemaGrid contributors | Original work: clean-room Italian interface translations | MIT OR Apache-2.0 |
 | `crates/ui-egui/src/i18n/id.tsv` | CinemaGrid contributors | Original work: clean-room Indonesian interface translations | MIT OR Apache-2.0 |
 | `crates/ui-egui/src/i18n/ko.tsv` | CinemaGrid contributors | Original work: clean-room Korean interface translations | MIT OR Apache-2.0 |
@@ -55,7 +57,7 @@ iconography, images or other Adobe assets; open licences only; every asset attri
 
 Reference frames for the renderer golden tests (`crates/golden`), rendered by CinemaGrid itself from
 procedural demo footage (`crates/media/src/generators.rs`); no external media. Regenerate with
-`CINEMAGRID_BLESS=1 cargo test -p cinemagrid-golden`.
+`FILMCRAFT_BLESS=1 cargo test -p cinemagrid-golden`.
 
 | Asset | Author | Source | Licence |
 |---|---|---|---|

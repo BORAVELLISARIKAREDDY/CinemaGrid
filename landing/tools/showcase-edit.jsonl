@@ -1,0 +1,28 @@
+{"id": "file.openDemoProject", "params": {}}
+{"id": "tts.create", "params": {"text": "Welcome to CinemaGrid. The first video editor built for AI agents and creators.", "seconds": 0.5, "voice": "basic-female", "pace": 1.05, "dir": "target/narrations", "track": "Audio 3"}}
+{"id": "tts.create", "params": {"text": "Engineered in pure Rust with zero-panic reliability and clean-room codecs.", "seconds": 9.8, "voice": "basic-male", "pace": 1.05, "dir": "target/narrations", "track": "Audio 3"}}
+{"id": "tts.create", "params": {"text": "Open source, blazing fast, and ready for the future of video.", "seconds": 21.5, "voice": "basic-female", "pace": 1.05, "dir": "target/narrations", "track": "Audio 3"}}
+{"id": "graphics.newText", "params": {"text": "CINEMAGRID", "time": 127008000000, "seconds": 4.2, "position": [960, 480], "size": 110}}
+{"id": "graphics.set", "params": {"clip": 55, "layer": 0, "props": {"fill_color": "#00F2FE", "font_style": "Bold", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "THE AGENT-FIRST NLE", "time": 203212800000, "seconds": 3.9, "position": [960, 580], "size": 38}}
+{"id": "graphics.set", "params": {"clip": 57, "layer": 0, "props": {"fill_color": "#FFFFFF", "font_style": "Bold", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "EXACT TICK-BASED TIME", "time": 1320883200000, "seconds": 3.8, "position": [960, 490], "size": 72}}
+{"id": "graphics.set", "params": {"clip": 59, "layer": 0, "props": {"fill_color": "#4FACFE", "font_style": "Bold", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "Sub-frame accuracy · Zero float drift", "time": 1397088000000, "seconds": 3.5, "position": [960, 580], "size": 34}}
+{"id": "graphics.set", "params": {"clip": 61, "layer": 0, "props": {"fill_color": "#E0E7FF", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "RULE 0: NEVER CRASH", "time": 2489356800000, "seconds": 3.6, "position": [960, 490], "size": 76}}
+{"id": "graphics.set", "params": {"clip": 63, "layer": 0, "props": {"fill_color": "#38EF7D", "font_style": "Bold", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "Pure Rust · 100% Result<T, E> · Clean-room codecs", "time": 2540160000000, "seconds": 3.4, "position": [960, 580], "size": 32}}
+{"id": "graphics.set", "params": {"clip": 65, "layer": 0, "props": {"fill_color": "#E0E7FF", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "NATIVE MCP & AUTOMATION", "time": 3505420800000, "seconds": 4.0, "position": [960, 490], "size": 70}}
+{"id": "graphics.set", "params": {"clip": 67, "layer": 0, "props": {"fill_color": "#FFB300", "font_style": "Bold", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "Drive the live desktop app or run headlessly", "time": 3581625600000, "seconds": 3.7, "position": [960, 580], "size": 32}}
+{"id": "graphics.set", "params": {"clip": 69, "layer": 0, "props": {"fill_color": "#E0E7FF", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "TEXT-BASED EDITING", "time": 4699296000000, "seconds": 2.7, "position": [960, 490], "size": 70}}
+{"id": "graphics.set", "params": {"clip": 71, "layer": 0, "props": {"fill_color": "#B983FF", "font_style": "Bold", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "Cut video by editing the transcript", "time": 4750099200000, "seconds": 2.5, "position": [960, 580], "size": 32}}
+{"id": "graphics.set", "params": {"clip": 73, "layer": 0, "props": {"fill_color": "#E0E7FF", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "CINEMAGRID", "time": 5461344000000, "seconds": 4.8, "position": [960, 480], "size": 100}}
+{"id": "graphics.set", "params": {"clip": 75, "layer": 0, "props": {"fill_color": "#00F2FE", "font_style": "Bold", "align": "center"}}}
+{"id": "graphics.newText", "params": {"text": "The Open-Source Creative Engine", "time": 5537548800000, "seconds": 4.5, "position": [960, 580], "size": 36}}
+{"id": "graphics.set", "params": {"clip": 77, "layer": 0, "props": {"fill_color": "#FFFFFF", "align": "center"}}}

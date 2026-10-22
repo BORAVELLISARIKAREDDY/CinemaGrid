@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CinemaGrid — The Agent-Native Video Editor</title>
+  <meta name="description" content="CinemaGrid is the world's first open-source, non-linear video editor built in pure Rust for AI agents and human creators. Microsecond exact time, zero-panic engine, clean-room codecs, and native MCP support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Glow & Grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="url(#brand-grad)" />
+            <path d="M9 7L23 16L9 25V7Z" fill="#0A0B10" stroke="#00F2FE" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="16" cy="16" r="3" fill="#00F2FE"/>
+            <defs>
+              <linearGradient id="brand-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00F2FE"/>
+                <stop offset="1" stop-color="#4FACFE"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">CinemaGrid</span>
+          <span class="brand-tag">v2026.10</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#showcase" class="nav-link">Showcase Video</a>
+        <a href="#ai-engine" class="nav-link">AI & MCP</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#simulator" class="nav-link">Interactive Studio</a>
+        <a href="#quickstart" class="nav-link">Quickstart</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/BORAVELLISARIKAREDDY/CinemaGrid" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="#quickstart" class="btn btn-primary btn-sm" id="btn-mcp-bridge" data-copy="./target/release/cinemagrid --control 9876">
+          <span>Run MCP Bridge</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        <span>The First Agent-Native Video Editor · Pure Rust</span>
+      </div>
+
+      <h1 class="hero-title">
+        The Video Editor Built for<br>
+        <span class="gradient-text">AI Agents and Humans.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        CinemaGrid is a professional non-linear video editing suite engineered from scratch with microsecond-exact rational time, zero-panic reliability, and clean-room codecs. Control it visually in the desktop studio or automate entire timelines over MCP and JSON.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#showcase" class="btn btn-primary btn-lg" id="btn-watch-showcase">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Showcase Edit</span>
+        </a>
+        <a href="#simulator" class="btn btn-secondary btn-lg">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Try AI Studio Simulator</span>
+        </a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="hero-badge-item">
+          <span class="badge-icon">🛡️</span>
+          <div>
+            <strong>Rule 0: Never Crash</strong>
+            <span>Zero panics · Pure Result&lt;T, E&gt;</span>
+          </div>
+        </div>
+        <div class="hero-badge-item">
+          <span class="badge-icon">⏱️</span>
+          <div>
+            <strong>Exact Rational Time</strong>
+            <span>254B Ticks/sec · Zero float drift</span>
+          </div>
+        </div>
+        <div class="hero-badge-item">
+          <span class="badge-icon">🤖</span>
+          <div>
+            <strong>Native MCP Protocol</strong>
+            <span>Direct Claude & agent bridge</span>
+          </div>
+        </div>
+        <div class="hero-badge-item">
+          <span class="badge-icon">🦀</span>
+          <div>
+            <strong>Clean-Room Codecs</strong>
+            <span>Pure Rust H.264, AV1, ProRes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Video Section -->
+  <section id="showcase" class="section showcase-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Autonomous Video Production</span>
+        <h2 class="section-title">Created 100% Inside CinemaGrid with AI</h2>
+        <p class="section-desc">
+          Every frame, sound effect, procedural scene, graphic overlay, and synthesized voiceover in this video was generated and edited entirely using CinemaGrid's internal tools and AI engine commands. No third-party footage or external editors were used.
+        </p>
+      </div>
+
+      <!-- Cinema Screen Video Player Box -->
+      <div class="cinema-player-card">
+        <div class="cinema-topbar">
+          <div class="traffic-lights">
+            <span class="light red"></span>
+            <span class="light yellow"></span>
+            <span class="light green"></span>
+          </div>
+          <div class="cinema-title">
+            <span class="dot-rec"></span>
+            <span>cinemagrid_showcase.mp4 — 960×540 23.976fps [CinemaGrid Pure Rust H.264 / AAC]</span>
+          </div>
+          <div class="cinema-stats">
+            <span class="badge-stat">Timecode: <span id="tc-display">00:00:00:00</span></span>
+          </div>
+        </div>
+
+        <div class="video-wrapper">
+          <video id="hero-video" preload="metadata" poster="assets/images/poster.png" playsinline controls>
+            <source src="assets/video/cinemagrid_showcase.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Live Sync Command Bar -->
+        <div class="cinema-sync-bar">
+          <div class="sync-indicator">
+            <span class="pulse-dot"></span>
+            <span class="sync-label">CURRENT AI ENGINE COMMAND:</span>
+          </div>
+          <div class="sync-command-display" id="sync-command">
+            <code>{"id": "playhead.init", "params": {"sequence": "CinemaGrid Demo"}}</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Breakdown Grid -->
+      <div class="video-metadata-grid">
+        <div class="meta-card">
+          <div class="meta-icon">🎬</div>
+          <div class="meta-content">
+            <h4>Procedural Cinematic Footage</h4>
+            <p>Rendered from mathematical generator shaders (Ocean Sunset, Aurora Timelapse, City Night Drive, Dunes, Misty Forest, Neon Loop). Zero external stock footage required.</p>
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-icon">🎙️</div>
+          <div class="meta-content">
+            <h4>Neural Voiceover Synthesis</h4>
+            <p>Voice tracks were generated on-the-fly using CinemaGrid's embedded text-to-speech engine (<code>tts.create</code>) and placed with sample-exact duration on timeline track <code>A3</code>.</p>
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-icon">🎨</div>
+          <div class="meta-content">
+            <h4>Automated Essential Graphics</h4>
+            <p>Dynamic kinetic titles, color fills (<code>#00F2FE</code>, <code>#38EF7D</code>), tracking, dropshadows, and baseline typography placed dynamically over footage using <code>graphics.newText</code>.</p>
+          </div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-icon">⚙️</div>
+          <div class="meta-content">
+            <h4>Pure Rust Export Pipeline</h4>
+            <p>Rendered through the deterministic CPU compositing oracle and exported to standard MP4 (H.264 High Profile / AAC) via clean-room encoders at 30+ frames per second.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Studio Simulator -->
+  <section id="simulator" class="section simulator-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Interactive Playground</span>
+        <h2 class="section-title">See How AI Drives the Timeline</h2>
+        <p class="section-desc">
+          CinemaGrid transforms natural language agent goals into frame-accurate timeline modifications. Select an AI scenario below to see the exact engine JSON command and watch the virtual timeline update live.
+        </p>
+      </div>
+
+      <div class="simulator-card">
+        <!-- Scenario Selector Tabs -->
+        <div class="sim-tabs">
+          <button class="sim-tab active" data-scenario="tts">
+            <span class="tab-badge">01</span>
+            <span>AI Voiceover & Placement</span>
+          </button>
+          <button class="sim-tab" data-scenario="textcut">
+            <span class="tab-badge">02</span>
+            <span>Whisper Text-Based Cut</span>
+          </button>
+          <button class="sim-tab" data-scenario="graphics">
+            <span class="tab-badge">03</span>
+            <span>Kinetic Motion Titles</span>
+          </button>
+          <button class="sim-tab" data-scenario="grade">
+            <span class="tab-badge">04</span>
+            <span>Lumetri Look & Ducking</span>
+          </button>
+        </div>
+
+        <div class="sim-body">
+          <!-- Left: Agent Prompt & JSON Protocol -->
+          <div class="sim-terminal">
+            <div class="terminal-header">
+              <span class="terminal-title">AGENT CONTEXT / MCP PROTOCOL</span>
+              <span class="terminal-status">127.0.0.1:9876 · CONNECTED</span>
+            </div>
+
+            <div class="terminal-content">
+              <div class="prompt-box">
+                <span class="prompt-label">USER PROMPT TO AGENT:</span>
+                <p class="prompt-text" id="sim-user-prompt">
+                  "Generate a voiceover saying 'CinemaGrid is built for AI agents' and place it at second 1 on audio track A3."
+                </p>
+              </div>
+
+              <div class="json-box">
+                <span class="json-label">DISPATCHED ENGINE COMMAND:</span>
+                <pre class="json-code" id="sim-json-code"><code>{
+  "id": "tts.create",
+  "params": {
+    "text": "CinemaGrid is built for AI agents",
+    "voice": "basic-female",
+    "seconds": 1.0,
+    "track": "Audio 3",
+    "dir": "narrations"
+  }
+}</code></pre>
+              </div>
+
+              <div class="result-box">
+                <span class="result-label">ENGINE RESPONSE (RESULT&lt;VALUE&gt;):</span>
+                <pre class="result-code" id="sim-result-code"><code>{
+  "ok": true,
+  "result": {
+    "clip": 49,
+    "track": "A3",
+    "start": 254016000000,
+    "duration": 497109312000,
+    "sampleRate": 24000
+  }
+}</code></pre>
+              </div>
+
+              <button class="btn btn-primary btn-block" id="btn-run-sim">
+                <span>▶ Run This Command on Timeline</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Sequence Canvas -->
+          <div class="sim-canvas">
+            <div class="canvas-header">
+              <span class="canvas-title">TIMELINE MONITOR — "Main Edit" (23.976 fps)</span>
+              <div class="canvas-timecode" id="sim-timecode">00:00:01:00 / 00:00:26:18</div>
+            </div>
+
+            <div class="canvas-timeline">
+              <!-- Ruler -->
+              <div class="timeline-ruler">
+                <span>00:00</span>
+                <span>00:05</span>
+                <span>00:10</span>
+                <span>00:15</span>
+                <span>00:20</span>
+                <span>00:25</span>
+              </div>
+
+              <!-- Track V3: Graphics -->
+              <div class="track-row" id="track-v3">
+                <div class="track-label">V3 [Titles]</div>
+                <div class="track-lane">
+                  <div class="timeline-clip clip-graphic" id="clip-title-demo" style="left: 10%; width: 22%;">
+                    <span>CINEMAGRID [Title]</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Track V1: Footage -->
+              <div class="track-row" id="track-v1">
+                <div class="track-label">V1 [Video]</div>
+                <div class="track-lane">
+                  <div class="timeline-clip clip-video" style="left: 0%; width: 18%;"><span>Sunset</span></div>
+                  <div class="timeline-clip clip-video" style="left: 18%; width: 17%;"><span>Aurora</span></div>
+                  <div class="timeline-clip clip-video" style="left: 35%; width: 15%;"><span>City</span></div>
+                  <div class="timeline-clip clip-video" style="left: 50%; width: 19%;"><span>Dunes</span></div>
+                  <div class="timeline-clip clip-video" style="left: 69%; width: 11%;"><span>Forest</span></div>
+                  <div class="timeline-clip clip-video" style="left: 80%; width: 20%;"><span>Neon</span></div>
+                </div>
+              </div>
+
+              <!-- Track A1: Music -->
+              <div class="track-row" id="track-a1">
+                <div class="track-label">A1 [Music]</div>
+                <div class="track-lane">
+                  <div class="timeline-clip clip-audio-score" style="left: 0%; width: 100%;">
+                    <span>Ambient_Score.wav (Background Score)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Track A3: AI Narration -->
+              <div class="track-row" id="track-a3">
+                <div class="track-label">A3 [Voiceover]</div>
+                <div class="track-lane">
+                  <div class="timeline-clip clip-tts" id="clip-tts-demo" style="left: 4%; width: 18%;">
+                    <span>🎙️ AI Narration (TTS)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Playhead line -->
+              <div class="sim-playhead" id="sim-playhead" style="left: 22%;">
+                <div class="playhead-handle"></div>
+              </div>
+            </div>
+
+            <!-- Inspector Panel -->
+            <div class="canvas-inspector">
+              <div class="inspector-item">
+                <span class="ins-label">ACTIVE SELECTION</span>
+                <span class="ins-val" id="ins-selection">Clip 49 [Narration]</span>
+              </div>
+              <div class="inspector-item">
+                <span class="ins-label">EXACT TICKS</span>
+                <span class="ins-val" id="ins-ticks">254,016,000,000 Tick</span>
+              </div>
+              <div class="inspector-item">
+                <span class="ins-label">UNDO HISTORY</span>
+                <span class="ins-val">Stack: 4 snapshots (Arc CoW)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How AI Works With CinemaGrid (Architecture & Workflow) -->
+  <section id="ai-engine" class="section workflow-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Agentic Video Workflow</span>
+        <h2 class="section-title">How AI Works With Video on CinemaGrid</h2>
+        <p class="section-desc">
+          Instead of brittle screen automation, CinemaGrid gives agents direct programmatic access to an immutable, copy-on-write editing engine. Here is the three-phase loop:
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">👁️</div>
+          <h3 class="step-title">Perceive & Inspect</h3>
+          <p class="step-text">
+            The agent inspects sequences, clips, media bins, and audio transcripts with commands like <code>inspect sequence</code> or <code>transcript.inspect</code>. Transcripts include word-level timestamps and speaker diarization generated by the integrated Whisper model.
+          </p>
+          <div class="step-code">
+            <code>{"method": "transcript.search", "params": {"query": "um"}}</code>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🧠</div>
+          <h3 class="step-title">Reason & Plan</h3>
+          <p class="step-text">
+            The LLM reasons about rhythm, pacing, filler words, and narrative arc. Because CinemaGrid measures all edits in exact integer <code>Tick</code> units (254,016,000,000 per second), the agent never causes floating-point drift or desynced audio over long edits.
+          </p>
+          <div class="step-code">
+            <code>{"method": "transcript.removeFillers", "params": {}}</code>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">⚡</div>
+          <h3 class="step-title">Act & Execute</h3>
+          <p class="step-text">
+            Edits are applied as single atomic undoable steps via <code>Session::execute()</code>. The engine enforces all timeline invariants (no overlapping clips, track bounds). If a command is invalid, a structured error is returned instead of panicking, allowing the agent to self-correct.
+          </p>
+          <div class="step-code">
+            <code>{"method": "sequence.rippleDelete", "params": {"clip": 32}}</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Architecture Highlights -->
+  <section id="architecture" class="section arch-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Engineering Standards</span>
+        <h2 class="section-title">Engineered to Outperform</h2>
+        <p class="section-desc">
+          CinemaGrid is built on rigorous craft standards defined across the workspace crates.
+        </p>
+      </div>
+
+      <div class="arch-grid">
+        <div class="arch-card">
+          <div class="arch-badge">RULE 0</div>
+          <h3 class="arch-title">Never Crash</h3>
+          <p class="arch-desc">
+            No <code>unwrap()</code>, <code>expect()</code>, or panics in application code. Every hostile input (corrupt media files, invalid parameters, full disks) returns an informative <code>Result&lt;T, E&gt;</code>. Unsaved user and agent work always survives.
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-badge">TIME BASE</div>
+          <h3 class="arch-title">Microsecond Exact Tick</h3>
+          <p class="arch-desc">
+            Zero float seconds in edit math. All positions are rational integer ticks. Whether editing at 23.976 fps, 29.97 drop-frame, 60 fps, or 120 fps, timeline items and 48 kHz audio align with microsecond precision.
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-badge">PERFORMANCE</div>
+          <h3 class="arch-title">Arc&lt;Project&gt; Snapshots</h3>
+          <p class="arch-desc">
+            Copy-on-write project trees allow background export, preview rendering, and UI playback to read project state concurrently without locks, while the undo stack maintains instantaneous snapshot reversibility.
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-badge">CODECS</div>
+          <h3 class="arch-title">Clean-Room Implementations</h3>
+          <p class="arch-desc">
+            Zero GPL code. Codecs (H.264, HEVC, AV1, ProRes, DNxHR, APV) and containers (MP4, MKV, MXF, AVI) are implemented directly from public ITU/ISO specifications under permissive MIT/Apache-2.0 licenses.
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-badge">PROTOCOL</div>
+          <h3 class="arch-title">Dual MCP & Bridge Mode</h3>
+          <p class="arch-desc">
+            Run headlessly on a Linux server without a display (<code>cinemagrid-cli mcp</code>) or connect Claude directly to your live desktop editing session (<code>--bridge 127.0.0.1:9876</code>) to pair-program edits side-by-side.
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-badge">AUDIO & AI</div>
+          <h3 class="arch-title">Embedded Neural Stack</h3>
+          <p class="arch-desc">
+            Local AI transcription via Whisper with Voice Activity Detection, alongside built-in neural and basic formant TTS narration generators that output sample-accurate WAV clips directly onto tracks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quickstart Section -->
+  <section id="quickstart" class="section quickstart-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Get Started</span>
+        <h2 class="section-title">Start Editing with AI in Seconds</h2>
+        <p class="section-desc">
+          CinemaGrid is ready to run as a desktop app, headless CLI, or MCP server.
+        </p>
+      </div>
+
+      <div class="quickstart-container">
+        <div class="code-terminal">
+          <div class="code-terminal-header">
+            <button type="button" class="term-tab active" data-snippet="bash">Bash / CLI</button>
+            <button type="button" class="term-tab" data-snippet="mcp">Claude Code MCP</button>
+            <button type="button" class="term-tab" data-snippet="python">Python Script</button>
+          </div>
+
+          <div class="code-terminal-body">
+            <!-- Bash / CLI -->
+            <pre class="cli-snippet" id="snippet-bash"><code><span class="c1"># 1. Build CinemaGrid engine and CLI</span>
+<span class="k">cargo</span> build --release -p cinemagrid -p cinemagrid-cli
+
+<span class="c1"># 2. Launch the desktop app with the AI control bridge enabled</span>
+./target/release/cinemagrid --control 9876 &amp;
+
+<span class="c1"># 3. Connect your AI agent via MCP or send instant commands</span>
+./target/release/cinemagrid-cli --bridge 127.0.0.1:9876 exec sequence.addEdit
+./target/release/cinemagrid-cli --demo export showcase.mp4 --scale 0.5</code></pre>
+            <!-- Claude Code MCP -->
+            <pre class="cli-snippet" id="snippet-mcp" hidden><code><span class="c1"># 1. Register CinemaGrid as an MCP server in Claude Code</span>
+<span class="k">claude</span> mcp add cinemagrid -- /path/to/cinemagrid-cli mcp --demo
+
+<span class="c1"># 2. Or bridge Claude into your live desktop session</span>
+<span class="k">claude</span> mcp add cinemagrid-live -- /path/to/cinemagrid-cli --bridge 127.0.0.1:9876
+
+<span class="c1"># 3. Then just ask: "trim the demo timeline to 10 seconds and export"</span></code></pre>
+            <!-- Python Script -->
+            <pre class="cli-snippet" id="snippet-python" hidden><code><span class="c1"># Drive the engine from any Python script (JSONL commands on stdin)</span>
+<span class="k">import</span> json, subprocess
+
+cmd = {"id": "tts.create", "params": {
+    "text": "Hello from a Python agent", "voice": "basic-female",
+    "seconds": 1.0, "track": "Audio 3", "dir": "narrations"}}
+subprocess.run(["cinemagrid-cli", "run", "-", "--save-as", "out.fcproj"],
+               input=json.dumps(cmd) + "
+", text=True)</code></pre>
+          </div>
+        </div>
+
+        <div class="quickstart-callout">
+          <h3>Connect Claude Code</h3>
+          <p>Add the CinemaGrid MCP server to your Claude configuration with one command:</p>
+          <div class="one-liner">
+            <code>claude mcp add cinemagrid-headless -- /path/to/cinemagrid-cli mcp --demo</code>
+          </div>
+          <p class="callout-sub">Your AI assistant can now inspect sequences, cut footage, synthesize voiceovers, apply color grades, and render exports automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="brand-name">CinemaGrid</span>
+          <span class="brand-tag">Open Source NLE</span>
+        </div>
+        <p class="footer-copy">
+          Designed and built for AI agents and creators. Licensed under MIT OR Apache-2.0. Clean-room, pure Rust, zero Adobe assets.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-col">
+          <strong>Product</strong>
+          <a href="#showcase">Showcase Video</a>
+          <a href="#simulator">Studio Simulator</a>
+          <a href="#ai-engine">AI Architecture</a>
+        </div>
+        <div class="link-col">
+          <strong>Resources</strong>
+          <a href="https://github.com/BORAVELLISARIKAREDDY/CinemaGrid" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          <a href="https://github.com/BORAVELLISARIKAREDDY/CinemaGrid/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer">Architecture Spec</a>
+          <a href="https://github.com/BORAVELLISARIKAREDDY/CinemaGrid/blob/main/docs/control-protocol.md" target="_blank" rel="noopener noreferrer">Control Protocol</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

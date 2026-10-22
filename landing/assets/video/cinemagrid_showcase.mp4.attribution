@@ -1,0 +1,8 @@
+asset:        cinemagrid_showcase.mp4
+title:        CinemaGrid Showcase Trailer Video
+author:       CinemaGrid Contributors
+source:       original work
+license:      MIT OR Apache-2.0
+license-file: LICENSE-MIT
+added:        2026-10-21 by CinemaGrid contributors
+notes:        Procedurally generated video edit rendered entirely inside CinemaGrid using built-in procedural scenes, Kokoro/basic TTS, and engine graphics.
