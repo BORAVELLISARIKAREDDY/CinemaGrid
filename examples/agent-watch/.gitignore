@@ -1,0 +1,9 @@
+# runtime artifacts — never commit
+watch/out/*
+watch/err/*
+watch/done/*
+watch/work/*
+!*/.gitkeep
+watch/watcher.log
+__pycache__/
+*.pyc
