@@ -1,5 +1,5 @@
 [package]
-name = "filmcraft-export"
+name = "cinemagrid-export"
 description = "Export pipeline: parallel render → encode → mux, presets, progress/cancel"
 version.workspace = true
 edition.workspace = true
@@ -10,23 +10,23 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
-filmcraft-time = { workspace = true }
-filmcraft-frame = { workspace = true }
-filmcraft-color = { workspace = true }
-filmcraft-media = { workspace = true }
-filmcraft-project = { workspace = true }
-filmcraft-render = { workspace = true }
-filmcraft-audio-dsp = { workspace = true }
-filmcraft-geom = { workspace = true }
-filmcraft-text = { workspace = true }
-filmcraft-isobmff = { workspace = true }
-filmcraft-prores = { workspace = true }
-filmcraft-dnx = { workspace = true }
-filmcraft-apv = { workspace = true }
-filmcraft-mxf = { workspace = true }
-filmcraft-aac = { workspace = true }
-filmcraft-flac = { workspace = true }
-filmcraft-h264enc = { workspace = true }
+cinemagrid-time = { workspace = true }
+cinemagrid-frame = { workspace = true }
+cinemagrid-color = { workspace = true }
+cinemagrid-media = { workspace = true }
+cinemagrid-project = { workspace = true }
+cinemagrid-render = { workspace = true }
+cinemagrid-audio-dsp = { workspace = true }
+cinemagrid-geom = { workspace = true }
+cinemagrid-text = { workspace = true }
+cinemagrid-isobmff = { workspace = true }
+cinemagrid-prores = { workspace = true }
+cinemagrid-dnx = { workspace = true }
+cinemagrid-apv = { workspace = true }
+cinemagrid-mxf = { workspace = true }
+cinemagrid-aac = { workspace = true }
+cinemagrid-flac = { workspace = true }
+cinemagrid-h264enc = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 thiserror = { workspace = true }
@@ -35,5 +35,5 @@ web-time = "1"
 image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "tiff", "bmp"] }
 
 [dev-dependencies]
-filmcraft-testkit = { workspace = true }
-filmcraft-codecs = { workspace = true }
+cinemagrid-testkit = { workspace = true }
+cinemagrid-codecs = { workspace = true }

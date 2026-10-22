@@ -5,4 +5,4 @@ source:       original work (CinemaGrid brand mark drawn by the contributor)
 license:      MIT OR Apache-2.0
 license-file: assets/app-icon/LICENSE.txt
 added:        2026-10-14 by bsarika
-notes:        Rendered from cinemagrid.svg with resvg by packaging/icons.sh, inside Apple's 824/1024 icon grid (transparent margin). Embedded in the app by apps/filmcraft/src/main.rs.
+notes:        Rendered from cinemagrid.svg with resvg by packaging/icons.sh, inside Apple's 824/1024 icon grid (transparent margin). Embedded in the app by apps/cinemagrid/src/main.rs.

@@ -1,7 +1,7 @@
 //! `cargo xtask parity [--area menus|effects|transitions] [--reference FILE] [--ours FILE]
 //! [--out FILE] [--min PERCENT]`: measured parity (docs/gaps.md G7).
 //!
-//! Compares one area of what FilmCraft ships with a reference list, and reports presence and
+//! Compares one area of what CinemaGrid ships with a reference list, and reports presence and
 //! placement separately: a reference item is *same place* when we have its label at the same path,
 //! *elsewhere* when we have the label under another path, and *missing* otherwise. A label match is
 //! presence only, not behaviour. The areas:
@@ -216,8 +216,8 @@ pub fn run(root: &Path, args: &[&str]) -> Result<(), String> {
 /// the `effect_catalog` example.
 fn dump_ours(area: Area) -> Result<String, String> {
     let (package, example) = match area {
-        Area::Menus => ("filmcraft-ui-egui", "menu_tree"),
-        Area::Effects | Area::Transitions => ("filmcraft-project", "effect_catalog"),
+        Area::Menus => ("cinemagrid-ui-egui", "menu_tree"),
+        Area::Effects | Area::Transitions => ("cinemagrid-project", "effect_catalog"),
     };
     let mut cmd = Command::new(env!("CARGO"));
     cmd.args(["run", "-q", "-p", package, "--example", example]).stderr(Stdio::inherit());
@@ -431,7 +431,7 @@ enum Placement {
 
 struct Report {
     area: Area,
-    /// (reference path, where it is in FilmCraft).
+    /// (reference path, where it is in CinemaGrid).
     items: Vec<(Vec<String>, Placement)>,
     out_of_scope: BTreeMap<&'static str, usize>,
     ours_only: Vec<Vec<String>>,

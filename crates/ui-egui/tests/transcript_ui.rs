@@ -7,9 +7,9 @@
 use std::sync::mpsc::{Sender, channel};
 
 use egui_kittest::Harness;
-use filmcraft_engine::Session;
-use filmcraft_ui_egui::FilmcraftApp;
-use filmcraft_ui_egui::control::ControlRequest;
+use cinemagrid_engine::Session;
+use cinemagrid_ui_egui::CinemagridApp;
+use cinemagrid_ui_egui::control::ControlRequest;
 use serde_json::{Value, json};
 
 /// Reproducible redraw cost for a long sequence transcript, with and without many search hits.
@@ -21,8 +21,8 @@ fn long_transcript_redraw_benchmark() {
     let item = d.harness.state().session.active_sequence().unwrap().audio_tracks[0].items[0].item;
     let words: Vec<Value> = (0..10_000)
         .map(|i| {
-            json!({"text": "hello", "start": filmcraft_time::Tick::from_seconds_f64(i as f64 * 0.4).0,
-            "end": filmcraft_time::Tick::from_seconds_f64(i as f64 * 0.4 + 0.3).0, "speaker": (i / 40) % 2})
+            json!({"text": "hello", "start": cinemagrid_time::Tick::from_seconds_f64(i as f64 * 0.4).0,
+            "end": cinemagrid_time::Tick::from_seconds_f64(i as f64 * 0.4 + 0.3).0, "speaker": (i / 40) % 2})
         })
         .collect();
     d.ok(
@@ -37,9 +37,9 @@ fn long_transcript_redraw_benchmark() {
     let id = session.state.active_sequence.unwrap();
     let seq = std::sync::Arc::make_mut(&mut session.project).sequence_mut(id).unwrap();
     seq.audio_tracks[0].items.truncate(1);
-    seq.audio_tracks[0].items[0].source_in = filmcraft_time::Tick::ZERO;
-    seq.audio_tracks[0].items[0].duration = filmcraft_time::Tick::from_seconds_f64(4000.0);
-    assert_eq!(filmcraft_engine::transcript::sequence_words(session).len(), 10_000);
+    seq.audio_tracks[0].items[0].source_in = cinemagrid_time::Tick::ZERO;
+    seq.audio_tracks[0].items[0].duration = cinemagrid_time::Tick::from_seconds_f64(4000.0);
+    assert_eq!(cinemagrid_engine::transcript::sequence_words(session).len(), 10_000);
     for query in ["", "hello"] {
         d.harness.state_mut().ui.transcript_search = query.into();
         d.frames(5);
@@ -55,7 +55,7 @@ fn long_transcript_redraw_benchmark() {
 }
 
 struct Driver {
-    harness: Harness<'static, FilmcraftApp>,
+    harness: Harness<'static, CinemagridApp>,
     tx: Sender<ControlRequest>,
     snapshots: Option<std::path::PathBuf>,
 }
@@ -65,7 +65,7 @@ impl Driver {
         let mut session = Session::default();
         session.execute("file.openDemoProject", json!({})).expect("demo project");
         let (tx, rx) = channel();
-        let app = FilmcraftApp::new(session).with_control(rx);
+        let app = CinemagridApp::new(session).with_control(rx);
         let snapshots = std::env::var_os("FILMCRAFT_UI_SNAPSHOT_DIR").map(std::path::PathBuf::from);
         let mut b = Harness::builder().with_size(egui::vec2(1600.0, 980.0)).with_max_steps(10_000);
         if snapshots.is_some() {
@@ -131,7 +131,7 @@ fn transcript_tab_selects_and_extracts_words() {
     let mut probe = Session::default();
     probe.execute("file.openDemoProject", json!({})).unwrap();
     let a = probe.active_sequence().unwrap().audio_tracks[0].items[0].clone();
-    let tk = |s: f64| a.source_in.0 + (s * filmcraft_time::TICKS_PER_SECOND as f64) as i64;
+    let tk = |s: f64| a.source_in.0 + (s * cinemagrid_time::TICKS_PER_SECOND as f64) as i64;
     let words: Vec<Value> = ["Hello", "um", "there", "friend."]
         .iter()
         .enumerate()

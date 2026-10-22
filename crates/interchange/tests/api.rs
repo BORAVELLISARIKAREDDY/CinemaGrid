@@ -4,9 +4,9 @@ mod support;
 
 use std::collections::HashSet;
 
-use filmcraft_interchange::{ExportOptions, Format, detect, export, import, merge_into, rebase_source_timecode};
-use filmcraft_project::{ItemKind, Project, TrackKind, TransitionAlign};
-use filmcraft_time::FrameRate;
+use cinemagrid_interchange::{ExportOptions, Format, detect, export, import, merge_into, rebase_source_timecode};
+use cinemagrid_project::{ItemKind, Project, TrackKind, TransitionAlign};
+use cinemagrid_time::FrameRate;
 use support::*;
 
 #[test]

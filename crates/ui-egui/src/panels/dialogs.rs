@@ -1,9 +1,9 @@
 //! Modal dialogs (About; Keyboard Shortcuts in `shortcuts_dialog`; Settings in `settings`;
 //! Recovery/Revert in `file_dialogs`).
 
-use crate::{Dialog, FilmcraftApp};
+use crate::{Dialog, CinemagridApp};
 
-pub fn show(app: &mut FilmcraftApp, ctx: &egui::Context) {
+pub fn show(app: &mut CinemagridApp, ctx: &egui::Context) {
     crate::panels::media_dialogs::show(app, ctx);
     crate::panels::color_dialogs::show(app, ctx);
     crate::panels::clip_dialogs::show(app, ctx);
@@ -93,7 +93,7 @@ pub fn show(app: &mut FilmcraftApp, ctx: &egui::Context) {
 ///
 /// Automation ids: `audioGain.<set|adjust|normalizeMax|normalizeAll>` (radio buttons),
 /// `audioGain.<mode>.value` (dB fields), `audioGain.peak`, `audioGain.ok`, `audioGain.cancel`.
-fn audio_gain(app: &mut FilmcraftApp, ctx: &egui::Context) -> bool {
+fn audio_gain(app: &mut CinemagridApp, ctx: &egui::Context) -> bool {
     let peak_id = egui::Id::new("audio-gain-peak");
     let rev = app.session.revision;
     let cached: Option<(u64, Option<f64>)> = ctx.data(|d| d.get_temp(peak_id));
@@ -187,9 +187,9 @@ fn audio_gain(app: &mut FilmcraftApp, ctx: &egui::Context) -> bool {
 /// (n tracks before the new ones; 0 = Before First Track); `addTracks.<audio|submix>.type` and
 /// `addTracks.<audio|submix>.type.option.<standard|stereo|5.1|adaptive|mono>`; `addTracks.ok`,
 /// `addTracks.cancel`.
-fn add_tracks(app: &mut FilmcraftApp, ctx: &egui::Context) -> bool {
+fn add_tracks(app: &mut CinemagridApp, ctx: &egui::Context) -> bool {
     let Some(seq) = app.session.active_sequence() else { return false };
-    let names = |tracks: &[filmcraft_engine::project::Track]| tracks.iter().map(|t| t.name.clone()).collect::<Vec<_>>();
+    let names = |tracks: &[cinemagrid_engine::project::Track]| tracks.iter().map(|t| t.name.clone()).collect::<Vec<_>>();
     let (vnames, anames, snames) = (names(&seq.video_tracks), names(&seq.audio_tracks), names(&seq.submix_tracks));
     let mut d = app.ui.add_tracks.clone();
     crate::widgets::revert_drag_on_escape(ctx, egui::Id::new("add-tracks-before-drag"), &mut d);
@@ -319,7 +319,7 @@ fn add_tracks(app: &mut FilmcraftApp, ctx: &egui::Context) -> bool {
 /// Automation ids: `deleteTracks.video`, `deleteTracks.audio`, `deleteTracks.captions` (checkboxes),
 /// `deleteTracks.<kind>.target` (track menus), `deleteTracks.<kind>.option.<empty|V1|A2|C1…>`
 /// (menu entries while open), `deleteTracks.ok`, `deleteTracks.cancel`.
-fn delete_tracks(app: &mut FilmcraftApp, ctx: &egui::Context) -> bool {
+fn delete_tracks(app: &mut CinemagridApp, ctx: &egui::Context) -> bool {
     let Some(seq) = app.session.active_sequence() else { return false };
     let names = |n: usize, p: &str| (1..=n).map(|i| format!("{p}{i}")).collect::<Vec<_>>();
     let vnames = names(seq.video_tracks.len(), "V");
@@ -415,7 +415,7 @@ fn delete_tracks(app: &mut FilmcraftApp, ctx: &egui::Context) -> bool {
 ///
 /// Automation ids: `about.tab.about`, `about.tab.contributors`, `about.tab.models`; the About tab's
 /// links and the credits controls are listed on [`about_tab`] and [`crate::credits::contributors_ui`].
-fn about(app: &mut FilmcraftApp, ui: &mut egui::Ui) {
+fn about(app: &mut CinemagridApp, ui: &mut egui::Ui) {
     let tab_id = egui::Id::new("about_tab");
     let mut tab = ui.data_mut(|d| d.get_temp::<u8>(tab_id)).unwrap_or(0);
     ui.horizontal(|ui| {
@@ -448,7 +448,7 @@ fn about(app: &mut FilmcraftApp, ui: &mut egui::Ui) {
 /// accented button.
 ///
 /// Automation ids: `about.github`, `about.reportIssue`.
-fn about_tab(app: &mut FilmcraftApp, ui: &mut egui::Ui) {
+fn about_tab(app: &mut CinemagridApp, ui: &mut egui::Ui) {
     use crate::icons::{self, Icon};
     use crate::links;
     let t = app.tokens;

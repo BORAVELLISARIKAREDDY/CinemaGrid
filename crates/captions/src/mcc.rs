@@ -33,12 +33,12 @@
 
 use std::collections::BTreeMap;
 
-use filmcraft_time::{FrameRate, fields_to_frames, frames_to_fields};
+use cinemagrid_time::{FrameRate, fields_to_frames, frames_to_fields};
 
 use crate::cea608::with_parity;
 use crate::{Cue, Document, Error, Result, scc};
 
-/// MCC files written by FilmCraft are 29.97 fps.
+/// MCC files written by CinemaGrid are 29.97 fps.
 pub const RATE: FrameRate = FrameRate::FPS_29_97;
 const CC_COUNT: usize = 20;
 /// cc_data triplets per frame left for CEA-708 (after the two CEA-608 fields).
@@ -318,7 +318,7 @@ fn schedule_708(doc: &Document) -> BTreeMap<i64, Vec<(bool, u8, u8)>> {
         let win = (i % 2) as u8;
         let s = scc::frame_of(c.start).max(cursor);
         let e = scc::frame_of(c.end);
-        let rows = scc::wrap_rows(&filmcraft_project::plain_text(&c.text));
+        let rows = scc::wrap_rows(&cinemagrid_project::plain_text(&c.text));
         let load = packets(&load_atoms(win, &rows), &mut seq);
         let mut f = (s - load.len() as i64).max(cursor);
         let mut last = f;

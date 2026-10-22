@@ -6,17 +6,17 @@ use std::sync::mpsc::{Sender, channel};
 use std::sync::{Arc, Mutex};
 
 use egui_kittest::Harness;
-use filmcraft_engine::Session;
-use filmcraft_ui_egui::FilmcraftApp;
-use filmcraft_ui_egui::control::ControlRequest;
-use filmcraft_ui_egui::state::Mode;
+use cinemagrid_engine::Session;
+use cinemagrid_ui_egui::CinemagridApp;
+use cinemagrid_ui_egui::control::ControlRequest;
+use cinemagrid_ui_egui::state::Mode;
 use serde_json::{Value, json};
 
 /// What the save panel was asked: filter label, extensions, suggested name.
 type Asked = Arc<Mutex<Vec<(String, Vec<String>, String)>>>;
 
 struct Driver {
-    harness: Harness<'static, FilmcraftApp>,
+    harness: Harness<'static, CinemagridApp>,
     tx: Sender<ControlRequest>,
 }
 
@@ -24,7 +24,7 @@ impl Driver {
     /// `save_to: None` is a cancelled save panel.
     fn new(session: Session, save_to: Option<std::path::PathBuf>, asked: Asked) -> Self {
         let (tx, rx) = channel();
-        let mut app = FilmcraftApp::new(session).with_control(rx);
+        let mut app = CinemagridApp::new(session).with_control(rx);
         app.hooks.pick_save_as = Some(Box::new(move |filter, exts, suggested| {
             asked.lock().unwrap().push((filter.to_string(), exts.iter().map(|e| e.to_string()).collect(), suggested.to_string()));
             save_to.as_ref().map(|d| d.join(suggested).to_string_lossy().into_owned())

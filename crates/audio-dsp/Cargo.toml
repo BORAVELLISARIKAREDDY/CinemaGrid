@@ -1,5 +1,5 @@
 [package]
-name = "filmcraft-audio-dsp"
+name = "cinemagrid-audio-dsp"
 description = "Real-time audio DSP for CinemaGrid: BS.1770 / EBU R128 loudness metering and audio effects"
 version.workspace = true
 edition.workspace = true
@@ -13,4 +13,4 @@ workspace = true
 [dependencies]
 
 [dev-dependencies]
-filmcraft-testkit = { workspace = true }
+cinemagrid-testkit = { workspace = true }

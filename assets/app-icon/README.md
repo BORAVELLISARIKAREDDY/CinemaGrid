@@ -33,12 +33,12 @@ Original work for CinemaGrid by @BORAVELLISARIKAREDDY, vectorised from the canon
 | `cinemagrid.svg` | canonical artwork |
 | `cinemagrid-small.svg` | lighter trace of the same drawing, for when size matters |
 | `cinemagrid-1024.png` | 1024 px render |
-| `cinemagrid-macos-512.png` | runtime Dock icon on macOS (embedded by `apps/filmcraft/src/main.rs`) |
+| `cinemagrid-macos-512.png` | runtime Dock icon on macOS (embedded by `apps/cinemagrid/src/main.rs`) |
 | `cinemagrid.icns` | macOS bundle icon (`CFBundleIconFile`) |
-| `cinemagrid.ico` | Windows icon, 16–256 px (embedded in `cinemagrid.exe` by `apps/filmcraft/build.rs`) |
+| `cinemagrid.ico` | Windows icon, 16–256 px (embedded in `cinemagrid.exe` by `apps/cinemagrid/build.rs`) |
 | `hicolor/<size>/apps/io.github.boravellisarikareddy.cinemagrid.png`, `hicolor/scalable/…svg` | Linux icon theme, used by `packaging/linux/io.github.boravellisarikareddy.cinemagrid.desktop` |
 
-The web app's `apps/filmcraft-web/web/favicon.png` (128 px) comes from the same artwork.
+The web app's `apps/cinemagrid-web/web/favicon.png` (128 px) comes from the same artwork.
 
 ## How the icon reaches each OS
 

@@ -1,11 +1,11 @@
-//! Graphics templates (`.fcgt`): FilmCraft's own format for reusable graphics with editable
+//! Graphics templates (`.fcgt`): CinemaGrid's own format for reusable graphics with editable
 //! properties, the counterpart of motion graphics templates in other editors.
 //!
 //! A template file is UTF-8 JSON ([`GraphicsTemplate`]):
 //!
 //! ```json
 //! {
-//!   "format": "filmcraft.graphicsTemplate",
+//!   "format": "cinemagrid.graphicsTemplate",
 //!   "version": 1,
 //!   "id": "user:my-lower-third",
 //!   "name": "My Lower Third",
@@ -29,14 +29,14 @@
 //! - `resources.fonts` optionally embeds font files (base64) that the template needs; installing
 //!   the template registers them. Only embed fonts whose licence allows redistribution.
 //!
-//! FilmCraft never reads Adobe `.mogrt` files (or any other application's template format);
+//! CinemaGrid never reads Adobe `.mogrt` files (or any other application's template format);
 //! [`GraphicsTemplate::from_bytes`] rejects ZIP archives with a message saying so.
 //!
-//! The built-in templates ([`builtin_templates`]) are original designs made for FilmCraft in code
+//! The built-in templates ([`builtin_templates`]) are original designs made for CinemaGrid in code
 //! (no image, font or template files), under the project licence.
 
-use filmcraft_geom::Vec2;
-use filmcraft_time::{TICKS_PER_SECOND, Tick};
+use cinemagrid_geom::Vec2;
+use cinemagrid_time::{TICKS_PER_SECOND, Tick};
 use serde::{Deserialize, Serialize};
 
 use crate::effect::EffectInstance;
@@ -44,7 +44,7 @@ use crate::graphic::{self, new_shape_layer, new_text_layer};
 use crate::graphic_design::{GraphicMeta, LayerExtra, Pin, PinTarget, Roll, RollMode};
 use crate::keyframe::{Param, ParamValue};
 
-pub const TEMPLATE_FORMAT: &str = "filmcraft.graphicsTemplate";
+pub const TEMPLATE_FORMAT: &str = "cinemagrid.graphicsTemplate";
 pub const TEMPLATE_VERSION: u32 = 1;
 pub const TEMPLATE_EXTENSION: &str = "fcgt";
 
@@ -469,7 +469,7 @@ fn builtin(
     }
 }
 
-/// The built-in templates: original FilmCraft designs (lower thirds, titles, end credits,
+/// The built-in templates: original CinemaGrid designs (lower thirds, titles, end credits,
 /// callouts, a ticker), defined here in code. Designed at 1920×1080 with the bundled Inter font.
 pub fn builtin_templates() -> Vec<GraphicsTemplate> {
     let mut v = Vec::new();

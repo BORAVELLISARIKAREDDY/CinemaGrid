@@ -54,7 +54,7 @@ modules:
         CARGO_HOME: /run/build/cinemagrid/cargo
         CARGO_NET_OFFLINE: 'true'
     build-commands:
-      - cargo --offline build --release --locked -p filmcraft -p filmcraft-cli
+      - cargo --offline build --release --locked -p cinemagrid -p cinemagrid-cli
       - install -Dm755 target/release/cinemagrid /app/bin/cinemagrid
       # The headless CLI and its stdio MCP server, as in the release bundle (#346).
       - install -Dm755 target/release/cinemagrid-cli /app/bin/cinemagrid-cli

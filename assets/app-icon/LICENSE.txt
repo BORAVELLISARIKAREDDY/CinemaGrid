@@ -1,6 +1,6 @@
 CinemaGrid app icon (cinemagrid.svg and every file derived from it in this directory:
 cinemagrid-small.svg, cinemagrid-1024.png, cinemagrid-macos-512.png, cinemagrid.icns, cinemagrid.ico,
-hicolor/, and apps/filmcraft-web/web/favicon.png).
+hicolor/, and apps/cinemagrid-web/web/favicon.png).
 
 Original artwork made for this project by @BORAVELLISARIKAREDDY, then vectorised. No third-party
 material. Licensed like the rest of CinemaGrid, under either of:

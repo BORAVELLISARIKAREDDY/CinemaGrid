@@ -1,12 +1,12 @@
-//! FilmCraft benchmark suite (`cargo xtask bench`): decode speed per codec, Program-monitor
+//! CinemaGrid benchmark suite (`cargo xtask bench`): decode speed per codec, Program-monitor
 //! playback and scrubbing through the real frame scheduler, timeline UI frame time with a large
 //! sequence, export throughput, project save/open, and peak memory per section.
 //!
 //! ```sh
 //! cargo xtask bench                                   # every section, writes target/bench/bench-<label>.{json,md}
 //! cargo xtask bench --sections decode,scrub --repeat 3 --label after
-//! cargo xtask bench --sections decode --hw off --label hw-off   # FilmCraft's own decoders only
-//! cargo run --release -p filmcraft-ui-egui --example bench -- --section timeline   # one section, this process
+//! cargo xtask bench --sections decode --hw off --label hw-off   # CinemaGrid's own decoders only
+//! cargo run --release -p cinemagrid-ui-egui --example bench -- --section timeline   # one section, this process
 //! ```
 //!
 //! Each section runs in its own child process (fresh caches, and its own peak resident set size,
@@ -65,8 +65,8 @@ fn main() {
         hw: arg_value(&args, "--hw").unwrap_or_else(|| "auto".into()),
     };
     // as the desktop app: OS hardware decoders in front of ours, unless Hardware decoding is Off
-    filmcraft_platform::register();
-    filmcraft_codecs::hw::set_hardware_decoding(opts.hw != "off");
+    cinemagrid_platform::register();
+    cinemagrid_codecs::hw::set_hardware_decoding(opts.hw != "off");
     if let Some(section) = arg_value(&args, "--section") {
         let v = run_section(&section, &opts);
         let text = serde_json::to_string_pretty(&v).unwrap_or_default();

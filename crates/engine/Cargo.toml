@@ -1,5 +1,5 @@
 [package]
-name = "filmcraft-engine"
+name = "cinemagrid-engine"
 description = "CinemaGrid engine façade: session, command registry, history, media pool"
 version.workspace = true
 edition.workspace = true
@@ -12,32 +12,32 @@ workspace = true
 [features]
 default = []
 # Speech-to-text with Whisper (candle, CPU). Off by default and in wasm builds.
-whisper = ["filmcraft-speech/whisper"]
+whisper = ["cinemagrid-speech/whisper"]
 # Speech-model downloads over HTTPS.
-speech-download = ["filmcraft-speech/download"]
+speech-download = ["cinemagrid-speech/download"]
 # Natural voices for Text to Speech: Kokoro-82M on candle (CPU) and their download.
-neural-voices = ["filmcraft-tts/kokoro", "speech-download"]
+neural-voices = ["cinemagrid-tts/kokoro", "speech-download"]
 
 [dependencies]
-filmcraft-time = { workspace = true }
-filmcraft-geom = { workspace = true }
-filmcraft-color = { workspace = true }
-filmcraft-frame = { workspace = true }
-filmcraft-media = { workspace = true }
-filmcraft-codecs = { workspace = true }
-filmcraft-project = { workspace = true }
-filmcraft-edit = { workspace = true }
-filmcraft-render = { workspace = true }
-filmcraft-scopes = { workspace = true }
-filmcraft-text = { workspace = true }
-filmcraft-audio-dsp = { workspace = true }
-filmcraft-export = { workspace = true }
-filmcraft-mxf = { workspace = true }
-filmcraft-format = { workspace = true }
-filmcraft-interchange = { workspace = true }
-filmcraft-captions = { workspace = true }
-filmcraft-speech = { workspace = true }
-filmcraft-tts = { workspace = true }
+cinemagrid-time = { workspace = true }
+cinemagrid-geom = { workspace = true }
+cinemagrid-color = { workspace = true }
+cinemagrid-frame = { workspace = true }
+cinemagrid-media = { workspace = true }
+cinemagrid-codecs = { workspace = true }
+cinemagrid-project = { workspace = true }
+cinemagrid-edit = { workspace = true }
+cinemagrid-render = { workspace = true }
+cinemagrid-scopes = { workspace = true }
+cinemagrid-text = { workspace = true }
+cinemagrid-audio-dsp = { workspace = true }
+cinemagrid-export = { workspace = true }
+cinemagrid-mxf = { workspace = true }
+cinemagrid-format = { workspace = true }
+cinemagrid-interchange = { workspace = true }
+cinemagrid-captions = { workspace = true }
+cinemagrid-speech = { workspace = true }
+cinemagrid-tts = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 thiserror = { workspace = true }
@@ -45,7 +45,7 @@ log = { workspace = true }
 web-time = "1"
 
 [dev-dependencies]
-filmcraft-testkit = { workspace = true }
-filmcraft-dng = { workspace = true, features = ["writer"] }
-filmcraft-isobmff = { workspace = true }
+cinemagrid-testkit = { workspace = true }
+cinemagrid-dng = { workspace = true, features = ["writer"] }
+cinemagrid-isobmff = { workspace = true }
 image = { version = "0.25", default-features = false, features = ["png", "gif"] }

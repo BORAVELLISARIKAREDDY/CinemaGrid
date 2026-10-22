@@ -3,7 +3,7 @@
 mod common;
 
 use common::*;
-use filmcraft_isobmff::*;
+use cinemagrid_isobmff::*;
 use serde_json::Value;
 use std::io::Cursor;
 use std::path::{Path, PathBuf};

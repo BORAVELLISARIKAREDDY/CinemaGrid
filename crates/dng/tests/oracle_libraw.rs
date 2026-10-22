@@ -7,8 +7,8 @@
 use std::path::PathBuf;
 use std::process::Command;
 
-use filmcraft_dng::Dng;
-use filmcraft_dng::writer::{Compression, Layout, Options, write};
+use cinemagrid_dng::Dng;
+use cinemagrid_dng::writer::{Compression, Layout, Options, write};
 
 fn tool() -> Option<String> {
     let t = std::env::var("FILMCRAFT_UNPROCESSED_RAW").unwrap_or_else(|_| "unprocessed_raw".into());
@@ -54,7 +54,7 @@ fn libraw_reads_our_raw_samples() {
         eprintln!("SKIPPED: unprocessed_raw (LibRaw samples) not installed");
         return;
     };
-    let dir: PathBuf = std::env::temp_dir().join(format!("filmcraft-dng-oracle-{}", std::process::id()));
+    let dir: PathBuf = std::env::temp_dir().join(format!("cinemagrid-dng-oracle-{}", std::process::id()));
     std::fs::create_dir_all(&dir).unwrap();
     let (w, h) = (40, 26);
     let mut cases: Vec<(String, Options, u32)> = Vec::new();

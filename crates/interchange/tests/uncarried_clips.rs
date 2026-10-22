@@ -4,9 +4,9 @@
 
 mod support;
 
-use filmcraft_interchange::{ExportOptions, Format, Report, export, import};
-use filmcraft_project::{ItemId, ItemKind, Label, ParamValue, Project, TrackKind, find_effect};
-use filmcraft_time::FrameRate;
+use cinemagrid_interchange::{ExportOptions, Format, Report, export, import};
+use cinemagrid_project::{ItemId, ItemKind, Label, ParamValue, Project, TrackKind, find_effect};
+use cinemagrid_time::FrameRate;
 use support::*;
 
 const RATE: FrameRate = FrameRate::FPS_24;

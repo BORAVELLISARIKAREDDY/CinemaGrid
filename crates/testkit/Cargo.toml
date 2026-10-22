@@ -1,5 +1,5 @@
 [package]
-name = "filmcraft-testkit"
+name = "cinemagrid-testkit"
 description = "Test-only helpers: ffmpeg/ffprobe oracle discovery, fixture directories, golden-image comparison"
 version.workspace = true
 edition.workspace = true

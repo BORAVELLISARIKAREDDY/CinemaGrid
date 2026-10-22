@@ -58,7 +58,7 @@ echo "==> CinemaGrid $VERSION for macOS ($ARCH), identity: $IDENTITY, notarize: 
 if [ "$SKIP_BUILD" = 0 ]; then
   args=()
   for t in "${TARGETS[@]}"; do args+=(--target "$t"); done
-  (cd "$ROOT" && cargo build --release --locked -p filmcraft -p filmcraft-cli "${args[@]}")
+  (cd "$ROOT" && cargo build --release --locked -p cinemagrid -p cinemagrid-cli "${args[@]}")
 fi
 
 rm -rf "$WORK"

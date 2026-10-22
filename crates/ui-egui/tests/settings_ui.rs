@@ -11,13 +11,13 @@ use std::sync::mpsc::{Sender, channel};
 use egui::accesskit::Role;
 use egui_kittest::Harness;
 use egui_kittest::kittest::{By, NodeT, Queryable};
-use filmcraft_engine::Session;
-use filmcraft_ui_egui::FilmcraftApp;
-use filmcraft_ui_egui::control::ControlRequest;
+use cinemagrid_engine::Session;
+use cinemagrid_ui_egui::CinemagridApp;
+use cinemagrid_ui_egui::control::ControlRequest;
 use serde_json::{Value, json};
 
 struct Driver {
-    harness: Harness<'static, FilmcraftApp>,
+    harness: Harness<'static, CinemagridApp>,
     tx: Sender<ControlRequest>,
     shots: Option<std::path::PathBuf>,
 }
@@ -27,7 +27,7 @@ impl Driver {
         let mut session = Session::default();
         session.execute("file.openDemoProject", json!({})).expect("demo project");
         let (tx, rx) = channel();
-        let app = FilmcraftApp::new(session).with_control(rx);
+        let app = CinemagridApp::new(session).with_control(rx);
         let shots = std::env::var_os("FILMCRAFT_UI_SHOTS").map(std::path::PathBuf::from);
         let mut b = Harness::builder().with_size(egui::vec2(1600.0, 980.0)).with_max_steps(10_000);
         if shots.is_some() {
@@ -389,7 +389,7 @@ fn appearance_labels_and_tooltips_take_effect() {
     // the header button cycles Auto, Light, Dark
     d.click("header.appearance");
     assert_eq!(d.pref("appearance.appearanceMode"), "dark");
-    assert_eq!(d.harness.state().tokens.kind, filmcraft_ui_egui::theme::ThemeKind::Medium, "the saved dark theme");
+    assert_eq!(d.harness.state().tokens.kind, cinemagrid_ui_egui::theme::ThemeKind::Medium, "the saved dark theme");
     d.click("header.appearance");
     assert_eq!(d.pref("appearance.appearanceMode"), "auto");
     d.menu("view.appearanceMode.next");
@@ -419,7 +419,7 @@ fn appearance_labels_and_tooltips_take_effect() {
     assert_eq!(rose["label"], "Interview");
     let r = d.exec("file.newSequence", json!({"name": "Labelled"}));
     let seq = r["sequence"].as_u64().unwrap();
-    assert_eq!(d.harness.state().session.project.item(filmcraft_project::ItemId(seq)).unwrap().label, filmcraft_project::Label::Teal);
+    assert_eq!(d.harness.state().session.project.item(cinemagrid_project::ItemId(seq)).unwrap().label, cinemagrid_project::Label::Teal);
 
     // Show Tool Tips off → egui never shows them
     d.menu("app.settings.general");
@@ -490,7 +490,7 @@ fn long_translations_stay_on_the_page() {
             d.click("settings.cancel");
         }
     }
-    filmcraft_ui_egui::i18n::set_current(filmcraft_ui_egui::i18n::Language::En);
+    cinemagrid_ui_egui::i18n::set_current(cinemagrid_ui_egui::i18n::Language::En);
 }
 
 #[test]
@@ -606,7 +606,7 @@ fn playhead_jumps_to_a_press_on_the_ruler() {
 fn label_color_presets() {
     use std::sync::{Arc, Mutex};
     let mut d = Driver::demo();
-    let dir = std::env::temp_dir().join(format!("filmcraft-label-presets-ui-{}", std::process::id()));
+    let dir = std::env::temp_dir().join(format!("cinemagrid-label-presets-ui-{}", std::process::id()));
     let _ = std::fs::remove_dir_all(&dir);
     std::fs::create_dir_all(&dir).unwrap();
     let folder = dir.join("Label Presets");

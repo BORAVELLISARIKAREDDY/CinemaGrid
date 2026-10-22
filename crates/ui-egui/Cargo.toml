@@ -1,5 +1,5 @@
 [package]
-name = "filmcraft-ui-egui"
+name = "cinemagrid-ui-egui"
 description = "The CinemaGrid egui frontend (swappable): panels, docking, timeline, monitors, control channel"
 version.workspace = true
 edition.workspace = true
@@ -11,21 +11,21 @@ workspace = true
 
 [dependencies]
 craft-ui = { workspace = true }
-filmcraft-time = { workspace = true }
-filmcraft-geom = { workspace = true }
-filmcraft-color = { workspace = true }
-filmcraft-frame = { workspace = true }
-filmcraft-media = { workspace = true }
-filmcraft-project = { workspace = true }
-filmcraft-tts = { workspace = true }
-filmcraft-edit = { workspace = true }
-filmcraft-render = { workspace = true }
-filmcraft-text = { workspace = true }
-filmcraft-audio-dsp = { workspace = true }
-filmcraft-engine = { workspace = true }
-filmcraft-export = { workspace = true }
-filmcraft-gpu = { workspace = true }
-filmcraft-scopes = { workspace = true }
+cinemagrid-time = { workspace = true }
+cinemagrid-geom = { workspace = true }
+cinemagrid-color = { workspace = true }
+cinemagrid-frame = { workspace = true }
+cinemagrid-media = { workspace = true }
+cinemagrid-project = { workspace = true }
+cinemagrid-tts = { workspace = true }
+cinemagrid-edit = { workspace = true }
+cinemagrid-render = { workspace = true }
+cinemagrid-text = { workspace = true }
+cinemagrid-audio-dsp = { workspace = true }
+cinemagrid-engine = { workspace = true }
+cinemagrid-export = { workspace = true }
+cinemagrid-gpu = { workspace = true }
+cinemagrid-scopes = { workspace = true }
 egui = { workspace = true }
 eframe = { workspace = true, features = ["default_fonts", "wgpu", "accesskit"] }
 serde = { workspace = true }
@@ -47,11 +47,11 @@ cpu-time = "1"
 
 [dev-dependencies]
 pollster = "0.4"
-filmcraft-codecs = { workspace = true }
+cinemagrid-codecs = { workspace = true }
 # the bench registers OS hardware decoders as the desktop app does (dev-dependency only: ui-egui
 # itself stays OS-independent and web-portable)
-filmcraft-platform = { workspace = true }
-filmcraft-interchange = { workspace = true }
+cinemagrid-platform = { workspace = true }
+cinemagrid-interchange = { workspace = true }
 egui_kittest = { workspace = true, features = ["eframe", "wgpu"] }
 
 # build.rs bakes contributors/contributors.json into the binary (About ▸ Contributors).

@@ -10,14 +10,14 @@ use std::path::{Path, PathBuf};
 use std::sync::mpsc::{Sender, channel};
 
 use egui_kittest::Harness;
-use filmcraft_engine::Session;
-use filmcraft_ui_egui::FilmcraftApp;
-use filmcraft_ui_egui::control::ControlRequest;
-use filmcraft_ui_egui::dock::PanelKind;
+use cinemagrid_engine::Session;
+use cinemagrid_ui_egui::CinemagridApp;
+use cinemagrid_ui_egui::control::ControlRequest;
+use cinemagrid_ui_egui::dock::PanelKind;
 use serde_json::{Value, json};
 
 struct Driver {
-    harness: Harness<'static, FilmcraftApp>,
+    harness: Harness<'static, CinemagridApp>,
     tx: Sender<ControlRequest>,
     snapshots: Option<PathBuf>,
 }
@@ -29,7 +29,7 @@ impl Driver {
         session.execute("file.openDemoProject", json!({})).expect("demo project");
         session.prefs_path = Some(data.join("preferences.json"));
         let (tx, rx) = channel();
-        let app = FilmcraftApp::new(session).with_control(rx);
+        let app = CinemagridApp::new(session).with_control(rx);
         let snapshots = std::env::var_os("FILMCRAFT_UI_SNAPSHOT_DIR").map(PathBuf::from);
         let mut b = Harness::builder().with_size(egui::vec2(1600.0, 980.0)).with_max_steps(10_000);
         if snapshots.is_some() {
@@ -97,7 +97,7 @@ impl Driver {
         v.as_array().unwrap().iter().any(|e| e["id"] == json!(id))
     }
 
-    fn app(&mut self) -> &mut FilmcraftApp {
+    fn app(&mut self) -> &mut CinemagridApp {
         self.harness.state_mut()
     }
 
@@ -135,7 +135,7 @@ impl Driver {
 }
 
 fn data_dir(name: &str) -> PathBuf {
-    let d = std::env::temp_dir().join(format!("filmcraft-workspaces-{name}-{}", std::process::id()));
+    let d = std::env::temp_dir().join(format!("cinemagrid-workspaces-{name}-{}", std::process::id()));
     let _ = std::fs::remove_dir_all(&d);
     std::fs::create_dir_all(&d).unwrap();
     d
@@ -255,7 +255,7 @@ fn save_rename_and_delete_through_the_dialogs() {
     let names = d.app().workspaces.saved.iter().map(|s| s.name.clone()).collect::<Vec<_>>();
     assert_eq!(names, ["Mountain"]);
     let row = |n: &str| {
-        let all = filmcraft_ui_egui::dock::names(&Default::default());
+        let all = cinemagrid_ui_egui::dock::names(&Default::default());
         let mut all = all;
         all.push("Mountain".into());
         all.sort_by_key(|x| x.to_lowercase());

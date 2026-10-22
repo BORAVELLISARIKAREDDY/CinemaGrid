@@ -31,10 +31,10 @@ jobs:
     # Intentionally tracked at @main (not SHA-pinned) so org-wide CI improvements, security fixes, and build optimizations propagate without PR churn across all craftapp repos.
     uses: storytold/craft-common-actions/.github/workflows/windows-arm64.yml@main
     with:
-      app-name: filmcraft
+      app-name: cinemagrid
       app-dir: CinemaGrid
-      # The crate is still `filmcraft`, but the shipped executables are `cinemagrid` /
-      # `cinemagrid-cli` (see apps/filmcraft/Cargo.toml); the shared workflow would otherwise
-      # look for `filmcraft.exe` / `filmcraft-cli.exe` after installing the MSI.
+      # The crate is still `cinemagrid`, but the shipped executables are `cinemagrid` /
+      # `cinemagrid-cli` (see apps/cinemagrid/Cargo.toml); the shared workflow would otherwise
+      # look for `cinemagrid.exe` / `cinemagrid-cli.exe` after installing the MSI.
       main-binary: cinemagrid.exe
       cli-binary: cinemagrid-cli.exe

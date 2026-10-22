@@ -31,7 +31,7 @@
 <br>
 
 <p align="center">
-  <img src="docs/images/filmcraft-hero.png" alt="CinemaGrid in the Color workspace, mid-way through an Apollo 11 documentary cut from NASA footage: the Program monitor on the Saturn V clearing the launch tower with a Launch Complex 39A lower third and an air-to-ground subtitle, Effect Controls with Lumetri and Scale keyframes on the shot, the Lumetri Color panel, bins of NASA selects, and a timeline with 49 picture cuts, B-roll, titles, a caption track, mission audio, a ducked music bed, named markers, a rendered section and live loudness meters" width="100%">
+  <img src="docs/images/cinemagrid-hero.png" alt="CinemaGrid in the Color workspace, mid-way through an Apollo 11 documentary cut from NASA footage: the Program monitor on the Saturn V clearing the launch tower with a Launch Complex 39A lower third and an air-to-ground subtitle, Effect Controls with Lumetri and Scale keyframes on the shot, the Lumetri Color panel, bins of NASA selects, and a timeline with 49 picture cuts, B-roll, titles, a caption track, mission audio, a ducked music bed, named markers, a rendered section and live loudness meters" width="100%">
 </p>
 
 <p align="center"><sub><i>Apollo 11 - Tranquility</i>: a three-minute documentary edit of NASA's 1969 launch, landing and moonwalk film, with subtitles from the mission transcript. Every frame in these screenshots comes from public-domain footage, decoded, composited and graded by CinemaGrid's own code.</sub></p>
@@ -65,7 +65,7 @@ CinemaGrid is a non-linear editor for people who know Premiere: the same panels,
 ## Edit
 
 <p align="center">
-  <img src="docs/images/filmcraft-assembly.png" alt="Assembly workspace: bins of film thumbnails, Carnival of Souls in the Source monitor, a Night of the Living Dead cemetery shot in the Program monitor, and the trailer on a three-track timeline with a Chopin score on A2 and loudness meters" width="100%">
+  <img src="docs/images/cinemagrid-assembly.png" alt="Assembly workspace: bins of film thumbnails, Carnival of Souls in the Source monitor, a Night of the Living Dead cemetery shot in the Program monitor, and the trailer on a three-track timeline with a Chopin score on A2 and loudness meters" width="100%">
 </p>
 
 <p align="center"><sub>The Assembly workspace, cutting a trailer for <i>Night of the Living Dead</i> (1968) with an insert from <i>Carnival of Souls</i> (1962).</sub></p>
@@ -80,7 +80,7 @@ CinemaGrid is a non-linear editor for people who know Premiere: the same panels,
 - **Never lose work.** Saves are atomic, auto-save keeps a rolling set of versions, and a crash-recovery journal written about a second after each edit brings back unsaved changes after a crash or power cut.
 
 <p align="center">
-  <img src="docs/images/filmcraft-timeline.png" alt="Timeline close-up: Night of the Living Dead shots with dissolves on V1, a Carnival of Souls insert on V2, the Chopin nocturne as a green waveform on A2, coloured markers along the ruler, and the loudness meter reading momentary, short-term, integrated and true-peak values" width="100%">
+  <img src="docs/images/cinemagrid-timeline.png" alt="Timeline close-up: Night of the Living Dead shots with dissolves on V1, a Carnival of Souls insert on V2, the Chopin nocturne as a green waveform on A2, coloured markers along the ruler, and the loudness meter reading momentary, short-term, integrated and true-peak values" width="100%">
 </p>
 
 <p align="center"><sub>Up close: dissolves, an insert on V2, the score on A2, coloured markers, and the loudness meters on the right.</sub></p>
@@ -90,7 +90,7 @@ CinemaGrid is a non-linear editor for people who know Premiere: the same panels,
 ## Color
 
 <p align="center">
-  <img src="docs/images/filmcraft-color.png" alt="Color workspace on Charade (1963): Cary Grant and Audrey Hepburn in the Program monitor, the waveform and vectorscope on the left, and the trailer bins and timeline below" width="100%">
+  <img src="docs/images/cinemagrid-color.png" alt="Color workspace on Charade (1963): Cary Grant and Audrey Hepburn in the Program monitor, the waveform and vectorscope on the left, and the trailer bins and timeline below" width="100%">
 </p>
 
 <p align="center"><sub>The Color workspace on <i>Charade</i> (1963), with live scopes beside the Program monitor.</sub></p>
@@ -107,11 +107,11 @@ CinemaGrid is a non-linear editor for people who know Premiere: the same panels,
 <table>
   <tr>
     <td width="34%" valign="top" align="center">
-      <img src="docs/images/filmcraft-lumetri.png" alt="The Lumetri Color panel on Charade (1963): Basic Correction sliders with coloured temperature and tint tracks, collapsed Creative and Curves sections, shadow, midtone and highlight colour wheels, and HSL Secondary and Vignette toggles"><br>
+      <img src="docs/images/cinemagrid-lumetri.png" alt="The Lumetri Color panel on Charade (1963): Basic Correction sliders with coloured temperature and tint tracks, collapsed Creative and Curves sections, shadow, midtone and highlight colour wheels, and HSL Secondary and Vignette toggles"><br>
       <sub><b>The Lumetri Color panel.</b> Basic Correction, Color Wheels and every other section, each with its own on/off switch.</sub>
     </td>
     <td width="66%" valign="top" align="center">
-      <img src="docs/images/filmcraft-scopes.png" alt="Lumetri Scopes: a green luma waveform and a vectorscope of a Charade (1963) frame"><br>
+      <img src="docs/images/cinemagrid-scopes.png" alt="Lumetri Scopes: a green luma waveform and a vectorscope of a Charade (1963) frame"><br>
       <sub><b>Scopes that tell the truth.</b> The waveform and vectorscope are computed from the graded frame. All grading happens in linear light, in 32-bit float.</sub>
     </td>
   </tr>
@@ -122,7 +122,7 @@ CinemaGrid is a non-linear editor for people who know Premiere: the same panels,
 ## Effects and motion
 
 <p align="center">
-  <img src="docs/images/filmcraft-effects.png" alt="Effects workspace: Effect Controls with Motion, Opacity, Time Remapping and Lumetri Color, NASA's Earth Views from the ISS in the Program monitor, and the Effects browser open on the Dissolve transitions" width="100%">
+  <img src="docs/images/cinemagrid-effects.png" alt="Effects workspace: Effect Controls with Motion, Opacity, Time Remapping and Lumetri Color, NASA's Earth Views from the ISS in the Program monitor, and the Effects browser open on the Dissolve transitions" width="100%">
 </p>
 
 <p align="center"><sub>NASA's <i>Earth Views from the ISS</i> with a look applied, and the Effects browser open on the dissolves.</sub></p>
@@ -133,7 +133,7 @@ CinemaGrid is a non-linear editor for people who know Premiere: the same panels,
 - **A GPU compositor** built on wgpu (Metal, Vulkan, DirectX 12, WebGPU). It samples YUV straight from the decoder with footprint supersampling and blends in linear light. A CPU path renders the same frames, and the two are tested against each other.
 
 <p align="center">
-  <img src="docs/images/filmcraft-keyframes.png" alt="Effect Controls with the value and velocity graphs of an eased Scale push-in on the Night of the Living Dead title card, the Program monitor showing the title over a country road, and the Properties panel with Transform and Crop" width="100%">
+  <img src="docs/images/cinemagrid-keyframes.png" alt="Effect Controls with the value and velocity graphs of an eased Scale push-in on the Night of the Living Dead title card, the Program monitor showing the title over a country road, and the Properties panel with Transform and Crop" width="100%">
 </p>
 
 <p align="center"><sub>An eased push-in on the title card: the value graph, the velocity graph and the Bezier influence handle.</sub></p>
@@ -186,7 +186,7 @@ Also imported: MPEG-2 / MPEG-1 video, AC-3, MP2, MXF (OP1a / OP-Atom), MPEG tran
 ## Export
 
 <p align="center">
-  <img src="docs/images/filmcraft-export.png" alt="Export mode: destinations for Media File, YouTube, Vimeo, TikTok, Instagram and FTP on the left, a Night of the Living Dead frame in the preview, and H.264 settings on the right (1440x1080 at 23.976 fps, 48000 Hz stereo, entire sequence)" width="100%">
+  <img src="docs/images/cinemagrid-export.png" alt="Export mode: destinations for Media File, YouTube, Vimeo, TikTok, Instagram and FTP on the left, a Night of the Living Dead frame in the preview, and H.264 settings on the right (1440x1080 at 23.976 fps, 48000 Hz stereo, entire sequence)" width="100%">
 </p>
 
 <p align="center"><sub>Export mode, set to write the trailer as H.264 MP4.</sub></p>
@@ -204,7 +204,7 @@ Move timelines between CinemaGrid and every other editor:
 
 - **Final Cut Pro 7 XML (xmeml):** the format Premiere and DaVinci Resolve exchange. It carries nested sequences, transitions, generators, Motion, Opacity, Time Remap and audio levels, with keyframes.
 - **FCPXML 1.9–1.11:** the spine, connected clips as lanes, transitions, retiming and compound clips.
-- **OpenTimelineIO:** the open interchange format of the film industry, round-tripping every CinemaGrid detail through `metadata.filmcraft`.
+- **OpenTimelineIO:** the open interchange format of the film industry, round-tripping every CinemaGrid detail through `metadata.cinemagrid`.
 - **CMX 3600 EDL:** the oldest format still in use, with drop-frame timecode, dissolves, wipes, speed changes (`M2`) and one EDL per track.
 - **AAF (Edit Protocol):** for Avid Media Composer and Pro Tools. Video and audio tracks, dissolves and dips, clip volume with keyframes, markers and source timecode; audio embedded or as separate WAV / AIFF files, trimmed with handles, with clip effects rendered in and broken out to mono, plus an optional video mixdown. Import reads AAF back, extracting embedded audio.
 - **OMF 2.0:** the audio-post handoff: the audio tracks with crossfades and gain, sample-accurate, with the audio encapsulated or alongside.
@@ -233,7 +233,7 @@ The trailer and the grades in these screenshots were built exactly this way, by 
 ## Everywhere
 
 - **Native** on macOS, Windows and Linux, with a native macOS menu bar.
-- **The web:** the same engine and UI run in the browser via WebAssembly (`apps/filmcraft-web`, see [docs/web.md](docs/web.md)); every release ships it as `cinemagrid-web-<version>.zip`.
+- **The web:** the same engine and UI run in the browser via WebAssembly (`apps/cinemagrid-web`, see [docs/web.md](docs/web.md)); every release ships it as `cinemagrid-web-<version>.zip`.
 - **Swappable UI.** The interface is one crate (`ui-egui`) over the engine, so a different front end can replace it without touching editing logic.
 
 <br>
@@ -241,17 +241,17 @@ The trailer and the grades in these screenshots were built exactly this way, by 
 ## Get started
 
 ```sh
-cargo run --release -p filmcraft                           # the desktop app, with a demo project
-cargo run --release -p filmcraft -- --control 9876         # plus the JSON-lines control server
-cargo run --release -p filmcraft-cli -- commands           # list every engine command
-cargo run --release -p filmcraft-cli -- mcp                # MCP server (headless)
+cargo run --release -p cinemagrid                           # the desktop app, with a demo project
+cargo run --release -p cinemagrid -- --control 9876         # plus the JSON-lines control server
+cargo run --release -p cinemagrid-cli -- commands           # list every engine command
+cargo run --release -p cinemagrid-cli -- mcp                # MCP server (headless)
 ```
 
 Japanese text in the interface and in titles comes from [craft-fonts](https://github.com/storytold/craft-fonts), an optional build input (release builds always include it; without it CinemaGrid uses its own and the system's fonts):
 
 ```sh
 git clone https://github.com/storytold/craft-fonts ../craft-fonts
-CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p filmcraft
+CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p cinemagrid
 ```
 
 The control protocol is documented in [docs/control-protocol.md](docs/control-protocol.md). Stuck, or found a bug? [Open an issue](https://github.com/BORAVELLISARIKAREDDY/cinemagrid/issues).
@@ -303,7 +303,7 @@ A layered Cargo workspace:
 | Editing and interchange | `edit`, `codecs`, `captions`, `format` (project files), `interchange` |
 | Rendering and output | `render`, `gpu`, `export` |
 | Engine | `engine`: command registry, session, undo, jobs |
-| Front ends | `ui-egui`, `automation` (MCP), `apps/filmcraft`, `apps/filmcraft-cli` |
+| Front ends | `ui-egui`, `automation` (MCP), `apps/cinemagrid`, `apps/cinemagrid-cli` |
 | Test support | `testkit` (ffmpeg oracles, fixtures), `golden` (golden-image tests) |
 
 Nothing below the front ends depends on a UI toolkit or OS API. `cargo xtask ci` checks formatting, lints, tests, the layering rules, asset attribution and the wasm build.

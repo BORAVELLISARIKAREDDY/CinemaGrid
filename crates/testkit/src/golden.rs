@@ -5,7 +5,7 @@
 //! image are written to `<workspace>/target/golden-failures/` for inspection.
 //!
 //! `FILMCRAFT_BLESS=1` (re)writes the reference instead of comparing, plus its `.attribution`
-//! sidecar when missing (AGENTS.md §1). References must be produced by FilmCraft itself (original
+//! sidecar when missing (AGENTS.md §1). References must be produced by CinemaGrid itself (original
 //! work), be small (< [`MAX_GOLDEN_BYTES`]) and be listed in `ATTRIBUTION.md`.
 
 use std::io::{BufReader, Cursor};
@@ -318,7 +318,7 @@ mod tests {
         if blessing() {
             return;
         }
-        let dir = std::env::temp_dir().join(format!("filmcraft-testkit-golden-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("cinemagrid-testkit-golden-{}", std::process::id()));
         let path = dir.join("ramp.png");
         let img = ramp(32, 16, 255);
         write_png(&path, &img).unwrap();

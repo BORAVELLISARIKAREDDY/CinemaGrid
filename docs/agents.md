@@ -22,7 +22,7 @@ and write wherever the user can.
 `cinemagrid-headless` = demo). Both point at `target/release/cinemagrid-cli`, so build it first:
 
 ```sh
-cargo build --release -p filmcraft-cli -p filmcraft
+cargo build --release -p cinemagrid-cli -p cinemagrid
 ./target/release/cinemagrid --control 9876 &      # only for the bridge server
 claude                                           # approve the project MCP servers when asked
 ```
@@ -249,7 +249,7 @@ failed write reports an error. The menu opens the normal save dialog; cancelling
 
 For any UI change, look at the result:
 
-1. `cargo run --release -p filmcraft -- --control 9876`
+1. `cargo run --release -p cinemagrid -- --control 9876`
 2. Drive the feature through the control channel or the MCP bridge: commands, then clicks and drags
    by automation id.
 3. Assert on `ui.inspect`, `ui.elements` and `sequence.inspect`.

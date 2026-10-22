@@ -1,9 +1,9 @@
-use filmcraft_project::{ParamValue, find_effect};
-use filmcraft_render::{
+use cinemagrid_project::{ParamValue, find_effect};
+use cinemagrid_render::{
     Image,
     effects::{FxCtx, apply},
 };
-use filmcraft_time::FrameRate;
+use cinemagrid_time::FrameRate;
 
 fn render_noise(effect_id: &str, rate: FrameRate, frame: i64, amount: f64) -> Vec<f32> {
     let mut image = Image::filled(16, 16, [0.5, 0.5, 0.5, 1.0]);
@@ -19,7 +19,7 @@ fn render_noise(effect_id: &str, rate: FrameRate, frame: i64, amount: f64) -> Ve
         project: None,
         env: None,
         frame_rate: 24.0,
-        working: filmcraft_color::WorkingSpace::Rec709,
+        working: cinemagrid_color::WorkingSpace::Rec709,
     };
     apply(&mut image, &effect, &context);
     image.px

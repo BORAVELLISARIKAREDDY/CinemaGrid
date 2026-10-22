@@ -16,8 +16,8 @@ tables, no conflicts in CinemaGrid Default or the Premiere preset, keys pressed 
 
 ## Keyboard-only commands (M3.12)
 
-Premiere has these as keys only (most are not in a menu). Modules: `filmcraft_engine::keyboard`
-(engine) and `filmcraft_ui_egui::panels::keyboard` (UI); their module docs list each id.
+Premiere has these as keys only (most are not in a menu). Modules: `cinemagrid_engine::keyboard`
+(engine) and `cinemagrid_ui_egui::panels::keyboard` (UI); their module docs list each id.
 
 | Group | Commands | Keys |
 |---|---|---|

@@ -1,5 +1,5 @@
 [package]
-name = "filmcraft-render"
+name = "cinemagrid-render"
 description = "Sequence evaluation and CPU reference compositor (linear-light premultiplied f32)"
 version.workspace = true
 edition.workspace = true
@@ -10,15 +10,15 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
-filmcraft-time = { workspace = true }
-filmcraft-geom = { workspace = true }
-filmcraft-color = { workspace = true }
-filmcraft-frame = { workspace = true }
-filmcraft-media = { workspace = true }
-filmcraft-project = { workspace = true }
-filmcraft-audio-dsp = { workspace = true }
-filmcraft-captions = { workspace = true }
-filmcraft-text = { workspace = true }
+cinemagrid-time = { workspace = true }
+cinemagrid-geom = { workspace = true }
+cinemagrid-color = { workspace = true }
+cinemagrid-frame = { workspace = true }
+cinemagrid-media = { workspace = true }
+cinemagrid-project = { workspace = true }
+cinemagrid-audio-dsp = { workspace = true }
+cinemagrid-captions = { workspace = true }
+cinemagrid-text = { workspace = true }
 rayon = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }

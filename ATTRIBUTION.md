@@ -23,23 +23,23 @@ iconography, images or other Adobe assets; open licences only; every asset attri
 | `assets/fonts/Inter-Italic.ttf` | The Inter Project Authors | https://github.com/rsms/inter | OFL-1.1 (`assets/fonts/OFL-Inter.txt`) |
 | `assets/fonts/NotoSerif-Regular.ttf` | The Noto Project Authors | https://github.com/notofonts/latin-greek-cyrillic | OFL-1.1 (`assets/fonts/OFL-NotoSerif.txt`) |
 | `assets/fonts/JetBrainsMono-Regular.ttf` | The JetBrains Mono Project Authors | https://github.com/JetBrains/JetBrainsMono | OFL-1.1 (`assets/fonts/OFL-JetBrainsMono.txt`) |
-| `docs/images/filmcraft-hero.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; NASA Apollo 11 film and TV footage (images.nasa.gov; US Government work, public domain; NASA does not endorse this project), subtitles from the NASA Apollo 11 air-to-ground transcript (public domain), CC0 Chopin (Musopen) | MIT OR Apache-2.0; footage and transcript public domain |
-| `docs/images/filmcraft-color.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Charade (1963, public domain) | MIT OR Apache-2.0; film frames public domain |
-| `docs/images/filmcraft-keyframes.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Night of the Living Dead (1968, public domain) | MIT OR Apache-2.0; film frames public domain |
-| `docs/images/filmcraft-export.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frame from Night of the Living Dead (1968, public domain) | MIT OR Apache-2.0; film frames public domain |
-| `docs/images/filmcraft-assembly.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Carnival of Souls (1962), Night of the Living Dead (1968), thumbnails of all demo media | MIT OR Apache-2.0; film frames public domain |
-| `docs/images/filmcraft-lumetri.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop (Lumetri Color panel) | MIT OR Apache-2.0 |
-| `docs/images/filmcraft-scopes.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop (scopes of a Charade (1963) frame, public domain) | MIT OR Apache-2.0 |
-| `docs/images/filmcraft-effects.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot crop; NASA Earth Views (US Government work, public domain) | MIT OR Apache-2.0; footage public domain |
-| `docs/images/filmcraft-timeline.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop; thumbnails from Night of the Living Dead (1968) and Carnival of Souls (1962), CC0 Chopin waveform | MIT OR Apache-2.0; film frames public domain |
+| `docs/images/cinemagrid-hero.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; NASA Apollo 11 film and TV footage (images.nasa.gov; US Government work, public domain; NASA does not endorse this project), subtitles from the NASA Apollo 11 air-to-ground transcript (public domain), CC0 Chopin (Musopen) | MIT OR Apache-2.0; footage and transcript public domain |
+| `docs/images/cinemagrid-color.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Charade (1963, public domain) | MIT OR Apache-2.0; film frames public domain |
+| `docs/images/cinemagrid-keyframes.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Night of the Living Dead (1968, public domain) | MIT OR Apache-2.0; film frames public domain |
+| `docs/images/cinemagrid-export.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frame from Night of the Living Dead (1968, public domain) | MIT OR Apache-2.0; film frames public domain |
+| `docs/images/cinemagrid-assembly.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Carnival of Souls (1962), Night of the Living Dead (1968), thumbnails of all demo media | MIT OR Apache-2.0; film frames public domain |
+| `docs/images/cinemagrid-lumetri.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop (Lumetri Color panel) | MIT OR Apache-2.0 |
+| `docs/images/cinemagrid-scopes.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop (scopes of a Charade (1963) frame, public domain) | MIT OR Apache-2.0 |
+| `docs/images/cinemagrid-effects.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot crop; NASA Earth Views (US Government work, public domain) | MIT OR Apache-2.0; footage public domain |
+| `docs/images/cinemagrid-timeline.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop; thumbnails from Night of the Living Dead (1968) and Carnival of Souls (1962), CC0 Chopin waveform | MIT OR Apache-2.0; film frames public domain |
 | `assets/app-icon/cinemagrid.svg` | @BORAVELLISARIKAREDDY | CinemaGrid app icon: dark cinema canvas, viewfinder corner brackets, a sweeping C-G monogram over timeline clips, a backdrop grid and a playhead. 512-unit full-bleed tile, rx=112. The canonical artwork; regenerate the derived icons with packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `packaging/macos/dmg/background.svg` | @XusBadia (original design), modified for CinemaGrid by bsarika | Original work: CinemaGrid macOS DMG window background, derived from the app icon (`assets/app-icon/cinemagrid.svg`); title re-outlined as "CinemaGrid"; rendered to `background.tiff` by `packaging/macos/dmg/generate.py` | MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`) |
 | `packaging/macos/dmg/background.tiff` | @XusBadia (original design), modified for CinemaGrid by bsarika | Rendered from `packaging/macos/dmg/background.svg` by `packaging/macos/dmg/generate.py` | MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`) |
 | `assets/app-icon/cinemagrid-small.svg` | @BORAVELLISARIKAREDDY | Lighter trace of the CinemaGrid app icon (no backdrop grid, glow, blur or viewfinder detail). Copied to the Linux hicolor scalable slot by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `assets/app-icon/cinemagrid-1024.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/cinemagrid-macos-512.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh, inside Apple's 824/1024 icon grid (transparent margin). Embedded in the app by apps/filmcraft/src/main.rs. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/cinemagrid-macos-512.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh, inside Apple's 824/1024 icon grid (transparent margin). Embedded in the app by apps/cinemagrid/src/main.rs. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `assets/app-icon/cinemagrid.icns` | @BORAVELLISARIKAREDDY | Built from resvg renders of cinemagrid.svg (Apple icon grid) with iconutil by packaging/icons.sh (a Pillow ICNS writer where iconutil is unavailable). | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/cinemagrid.ico` | @BORAVELLISARIKAREDDY | PNG renders of cinemagrid.svg (resvg) packed by cargo xtask ico in packaging/icons.sh. Embedded in cinemagrid.exe by apps/filmcraft/build.rs. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/cinemagrid.ico` | @BORAVELLISARIKAREDDY | PNG renders of cinemagrid.svg (resvg) packed by cargo xtask ico in packaging/icons.sh. Embedded in cinemagrid.exe by apps/cinemagrid/build.rs. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `assets/app-icon/hicolor/16x16/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `assets/app-icon/hicolor/24x24/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `assets/app-icon/hicolor/32x32/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
@@ -49,13 +49,13 @@ iconography, images or other Adobe assets; open licences only; every asset attri
 | `assets/app-icon/hicolor/256x256/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `assets/app-icon/hicolor/512x512/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 | `assets/app-icon/hicolor/scalable/apps/io.github.boravellisarikareddy.cinemagrid.svg` | @BORAVELLISARIKAREDDY | Copy of cinemagrid-small.svg, made by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `apps/filmcraft-web/web/favicon.png` | @BORAVELLISARIKAREDDY | Rendered from assets/app-icon/cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `apps/cinemagrid-web/web/favicon.png` | @BORAVELLISARIKAREDDY | Rendered from assets/app-icon/cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 
 ## Golden test images
 
 Reference frames for the renderer golden tests (`crates/golden`), rendered by CinemaGrid itself from
 procedural demo footage (`crates/media/src/generators.rs`); no external media. Regenerate with
-`FILMCRAFT_BLESS=1 cargo test -p filmcraft-golden`.
+`CINEMAGRID_BLESS=1 cargo test -p cinemagrid-golden`.
 
 | Asset | Author | Source | Licence |
 |---|---|---|---|
