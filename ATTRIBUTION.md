@@ -9,8 +9,6 @@ iconography, images or other Adobe assets; open licences only; every asset attri
 
 | Asset | Author | Source | Licence |
 |---|---|---|---|
-| `landing/assets/video/cinemagrid_showcase.mp4` | CinemaGrid contributors | Original work: procedural CinemaGrid showcase edit | MIT OR Apache-2.0 |
-| `landing/assets/images/poster.png` | CinemaGrid contributors | Original work: exported CinemaGrid showcase frame | MIT OR Apache-2.0 |
 | `crates/ui-egui/src/i18n/it.tsv` | CinemaGrid contributors | Original work: clean-room Italian interface translations | MIT OR Apache-2.0 |
 | `crates/ui-egui/src/i18n/id.tsv` | CinemaGrid contributors | Original work: clean-room Indonesian interface translations | MIT OR Apache-2.0 |
 | `crates/ui-egui/src/i18n/ko.tsv` | CinemaGrid contributors | Original work: clean-room Korean interface translations | MIT OR Apache-2.0 |
@@ -30,28 +28,28 @@ iconography, images or other Adobe assets; open licences only; every asset attri
 | `docs/images/cinemagrid-keyframes.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Night of the Living Dead (1968, public domain) | MIT OR Apache-2.0; film frames public domain |
 | `docs/images/cinemagrid-export.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frame from Night of the Living Dead (1968, public domain) | MIT OR Apache-2.0; film frames public domain |
 | `docs/images/cinemagrid-assembly.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot; frames from Carnival of Souls (1962), Night of the Living Dead (1968), thumbnails of all demo media | MIT OR Apache-2.0; film frames public domain |
-| `docs/images/cinemagrid-lumetri.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop (Lumetri Color panel) | MIT OR Apache-2.0 |
+| `docs/images/cinemagrid-color-panel.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop (color grading panel) | MIT OR Apache-2.0 |
 | `docs/images/cinemagrid-scopes.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop (scopes of a Charade (1963) frame, public domain) | MIT OR Apache-2.0 |
 | `docs/images/cinemagrid-effects.png` | CinemaGrid contributors | Original work: CinemaGrid screenshot crop; NASA Earth Views (US Government work, public domain) | MIT OR Apache-2.0; footage public domain |
 | `docs/images/cinemagrid-timeline.png` | CinemaGrid contributors | Original work: CinemaGrid UI crop; thumbnails from Night of the Living Dead (1968) and Carnival of Souls (1962), CC0 Chopin waveform | MIT OR Apache-2.0; film frames public domain |
-| `assets/app-icon/cinemagrid.svg` | @BORAVELLISARIKAREDDY | CinemaGrid app icon: dark cinema canvas, viewfinder corner brackets, a sweeping C-G monogram over timeline clips, a backdrop grid and a playhead. 512-unit full-bleed tile, rx=112. The canonical artwork; regenerate the derived icons with packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `packaging/macos/dmg/background.svg` | @XusBadia (original design), modified for CinemaGrid by bsarika | Original work: CinemaGrid macOS DMG window background, derived from the app icon (`assets/app-icon/cinemagrid.svg`); title re-outlined as "CinemaGrid"; rendered to `background.tiff` by `packaging/macos/dmg/generate.py` | MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`) |
-| `packaging/macos/dmg/background.tiff` | @XusBadia (original design), modified for CinemaGrid by bsarika | Rendered from `packaging/macos/dmg/background.svg` by `packaging/macos/dmg/generate.py` | MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`) |
-| `assets/app-icon/cinemagrid-small.svg` | @BORAVELLISARIKAREDDY | Lighter trace of the CinemaGrid app icon (no backdrop grid, glow, blur or viewfinder detail). Copied to the Linux hicolor scalable slot by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/cinemagrid-1024.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/cinemagrid-macos-512.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh, inside Apple's 824/1024 icon grid (transparent margin). Embedded in the app by apps/cinemagrid/src/main.rs. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/cinemagrid.icns` | @BORAVELLISARIKAREDDY | Built from resvg renders of cinemagrid.svg (Apple icon grid) with iconutil by packaging/icons.sh (a Pillow ICNS writer where iconutil is unavailable). | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/cinemagrid.ico` | @BORAVELLISARIKAREDDY | PNG renders of cinemagrid.svg (resvg) packed by cargo xtask ico in packaging/icons.sh. Embedded in cinemagrid.exe by apps/cinemagrid/build.rs. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/16x16/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/24x24/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/32x32/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/48x48/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/64x64/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/128x128/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/256x256/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/512x512/apps/io.github.boravellisarikareddy.cinemagrid.png` | @BORAVELLISARIKAREDDY | Rendered from cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `assets/app-icon/hicolor/scalable/apps/io.github.boravellisarikareddy.cinemagrid.svg` | @BORAVELLISARIKAREDDY | Copy of cinemagrid-small.svg, made by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
-| `apps/cinemagrid-web/web/favicon.png` | @BORAVELLISARIKAREDDY | Rendered from assets/app-icon/cinemagrid.svg with resvg by packaging/icons.sh. | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/cinemagrid.svg` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; canonical vector | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `packaging/macos/dmg/background.svg` | @XusBadia | Original work: CinemaGrid macOS DMG window background, derived from the CinemaGrid app icon (`assets/app-icon/cinemagrid.svg`); rendered to `background.tiff` by `packaging/macos/dmg/generate.py` | MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`) |
+| `packaging/macos/dmg/background.tiff` | @XusBadia | Rendered from `packaging/macos/dmg/background.svg` by `packaging/macos/dmg/generate.py` | MIT OR Apache-2.0 (`LICENSE-MIT`, `LICENSE-APACHE`) |
+| `assets/app-icon/cinemagrid-small.svg` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; lighter vector | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/cinemagrid-1024.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; 1024 px render | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/cinemagrid-macos-512.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; macOS runtime Dock icon (512 px) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/cinemagrid.icns` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; macOS .icns | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/cinemagrid.ico` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Windows .ico (16-256 px) | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/16x16/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 16 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/24x24/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 24 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/32x32/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 32 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/48x48/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 48 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/64x64/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 64 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/128x128/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 128 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/256x256/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 256 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/512x512/apps/ai.storyteller.cinemagrid.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme 512 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `assets/app-icon/hicolor/scalable/apps/ai.storyteller.cinemagrid.svg` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; Linux hicolor theme scalable | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
+| `apps/cinemagrid-web/web/favicon.png` | Brandon Thomas (CinemaGrid owner) | Original work: CinemaGrid app icon (owl with ear tufts), drawn by the owner in ArtCraft and vectorised; 128 px | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) |
 
 ## Golden test images
 
@@ -135,18 +133,21 @@ carry each font's licence as `OFL-<family>.txt`.
 
 ## First-party brand marks
 
-The CinemaGrid name, wordmark and icon in `docs/brand/` are original work by the
-project owner, licensed under the project licence (MIT OR Apache-2.0) like the rest of
-CinemaGrid.
+The ArtCraft name, wordmark and logos are trademarks of the ArtCraft Team. They are not open source and
+are not covered by the project licence; they may be used only unmodified and only in the context of
+CinemaGrid, under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt). Forks and modified versions must
+remove them (AGENTS.md §1.8).
 
 | File | Author | Source | Licence |
 |---|---|---|---|
-| `docs/brand/cinemagrid-logo-white.png` | @BORAVELLISARIKAREDDY | Original work: CinemaGrid wordmark logo PNG render (light ink for dark UI) | MIT OR Apache-2.0 |
-| `docs/brand/cinemagrid-logo-white.svg` | @BORAVELLISARIKAREDDY | Original work: CinemaGrid wordmark logo vector (light ink for dark UI) | MIT OR Apache-2.0 |
-| `docs/brand/cinemagrid-logo.png` | @BORAVELLISARIKAREDDY | Original work: CinemaGrid wordmark logo PNG render (dark ink for light UI) | MIT OR Apache-2.0 |
-| `docs/brand/cinemagrid-logo.svg` | @BORAVELLISARIKAREDDY | Original work: CinemaGrid wordmark logo vector (dark ink for light UI) | MIT OR Apache-2.0 |
-| `docs/brand/cinemagrid-mark.png` | @BORAVELLISARIKAREDDY | Original work: CinemaGrid icon mark PNG render | MIT OR Apache-2.0 |
-| `docs/brand/cinemagrid-mark.svg` | @BORAVELLISARIKAREDDY | Original work: CinemaGrid icon mark vector | MIT OR Apache-2.0 |
+| `docs/brand/artcraft-logo-white.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark, light ink for dark backgrounds) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
+| `docs/brand/artcraft-logo-white.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark, light ink for dark backgrounds) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
+| `docs/brand/artcraft-logo.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark (symbol + "ARTCRAFT"), dark ink for light backgrounds) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
+| `docs/brand/artcraft-logo.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft wordmark (symbol + "ARTCRAFT"), dark ink for light backgrounds) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
+| `docs/brand/artcraft-mark-black.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), black) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
+| `docs/brand/artcraft-mark-black.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), black) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
+| `docs/brand/artcraft-mark.png` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), blue) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
+| `docs/brand/artcraft-mark.svg` | ArtCraft Team | Original work: first-party ArtCraft brand mark (ArtCraft symbol ("A" mark), blue) | ArtCraft trademark, not open source; `docs/brand/LICENSE-brand.txt` (not MIT/Apache) |
 
 ## Third-party source code
 

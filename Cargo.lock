@@ -827,7 +827,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "arboard",
  "chrono",
@@ -860,7 +860,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-aac"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -870,7 +870,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-ac3"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
  "thiserror 2.0.21",
@@ -878,7 +878,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-apv"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -888,14 +888,14 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-audio-dsp"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
 ]
 
 [[package]]
 name = "cinemagrid-automation"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "base64 0.22.1",
  "cinemagrid-engine",
@@ -911,7 +911,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-av1"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -922,21 +922,21 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-avi"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
 ]
 
 [[package]]
 name = "cinemagrid-bitstream"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "proptest",
 ]
 
 [[package]]
 name = "cinemagrid-captions"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "cinemagrid-project",
@@ -949,11 +949,11 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-cfb"
-version = "0.9.0"
+version = "0.10.0"
 
 [[package]]
 name = "cinemagrid-cli"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-automation",
  "cinemagrid-codecs",
@@ -975,7 +975,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-codecs"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-aac",
  "cinemagrid-ac3",
@@ -1013,7 +1013,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-color"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "proptest",
  "serde",
@@ -1021,7 +1021,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-dng"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-dng",
  "rayon",
@@ -1030,7 +1030,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-dnx"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1040,7 +1040,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-edit"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-geom",
  "cinemagrid-media",
@@ -1053,7 +1053,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-engine"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-audio-dsp",
  "cinemagrid-captions",
@@ -1077,6 +1077,7 @@ dependencies = [
  "cinemagrid-text",
  "cinemagrid-time",
  "cinemagrid-tts",
+ "craft-docpath",
  "image",
  "log",
  "serde",
@@ -1087,7 +1088,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-export"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-aac",
  "cinemagrid-apv",
@@ -1118,7 +1119,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-flac"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1127,7 +1128,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-format"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-media",
  "cinemagrid-project",
@@ -1135,12 +1136,13 @@ dependencies = [
  "log",
  "serde",
  "serde_json",
+ "tempfile",
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "cinemagrid-frame"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "cinemagrid-time",
@@ -1150,7 +1152,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-geom"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "proptest",
  "serde",
@@ -1158,7 +1160,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-golden"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "cinemagrid-frame",
@@ -1175,7 +1177,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-gpu"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "cinemagrid-export",
@@ -1194,7 +1196,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-h264"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1204,7 +1206,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-h264enc"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1214,7 +1216,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-hevc"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1224,7 +1226,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-interchange"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-cfb",
  "cinemagrid-color",
@@ -1241,7 +1243,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-isobmff"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1252,7 +1254,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-matroska"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
  "serde_json",
@@ -1260,7 +1262,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-media"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "cinemagrid-dng",
@@ -1276,7 +1278,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-mpa"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1285,7 +1287,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-mpeg2v"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
  "rayon",
@@ -1294,7 +1296,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-mpegts"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
  "thiserror 2.0.21",
@@ -1302,28 +1304,28 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-mxf"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
 ]
 
 [[package]]
 name = "cinemagrid-ogg"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
 ]
 
 [[package]]
 name = "cinemagrid-opus"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
 ]
 
 [[package]]
 name = "cinemagrid-platform"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-codecs",
@@ -1349,7 +1351,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-project"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "cinemagrid-geom",
@@ -1363,7 +1365,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-prores"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
  "cinemagrid-testkit",
@@ -1373,7 +1375,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-render"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-audio-dsp",
  "cinemagrid-captions",
@@ -1393,7 +1395,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-scopes"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "serde",
@@ -1402,7 +1404,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-speech"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "candle-core",
  "candle-nn",
@@ -1420,14 +1422,14 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-testkit"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "png",
 ]
 
 [[package]]
 name = "cinemagrid-text"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-color",
  "harfrust",
@@ -1439,7 +1441,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-time"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "proptest",
  "serde",
@@ -1447,7 +1449,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-tts"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "candle-core",
  "candle-nn",
@@ -1461,7 +1463,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-tts-text"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "serde",
  "thiserror 2.0.21",
@@ -1469,7 +1471,7 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-ui-egui"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-audio-dsp",
  "cinemagrid-codecs",
@@ -1508,23 +1510,25 @@ dependencies = [
 
 [[package]]
 name = "cinemagrid-vp8"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
+ "cinemagrid-testkit",
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "cinemagrid-vp9"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-bitstream",
+ "cinemagrid-testkit",
  "rayon",
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "cinemagrid-web"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-codecs",
  "cinemagrid-color",
@@ -1731,6 +1735,11 @@ checksum = "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280"
 dependencies = [
  "libc",
 ]
+
+[[package]]
+name = "craft-docpath"
+version = "0.1.0"
+source = "git+https://github.com/storytold/craft-libs?rev=82a24b006eefa036b43c09a67fb9a3fbd17ffe63#82a24b006eefa036b43c09a67fb9a3fbd17ffe63"
 
 [[package]]
 name = "craft-ui"
@@ -7396,7 +7405,7 @@ checksum = "e450f9b2ed1dff33c94c12589a87338689467b9c4f5d8a5710bd09a847d2c8a7"
 
 [[package]]
 name = "xtask"
-version = "0.9.0"
+version = "0.10.0"
 dependencies = [
  "cinemagrid-testkit",
  "serde_json",
