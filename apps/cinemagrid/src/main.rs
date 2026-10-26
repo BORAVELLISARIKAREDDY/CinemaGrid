@@ -233,7 +233,8 @@ fn app_creator(launch: Launch, graphics: graphics::GraphicsStart, created: Arc<A
                 }
             }
         } else if !startup_flag && session.prefs.general.at_startup == "emptyProject" {
-        } else if demo {
+        } else if demo && startup_flag {
+            // --demo only: the default "showHome" startup lands on the Home screen below.
             let _ = session.execute("file.openDemoProject", json!({}));
         }
         if !media.is_empty() {
@@ -246,7 +247,21 @@ fn app_creator(launch: Launch, graphics: graphics::GraphicsStart, created: Arc<A
                 Err(e) => log::error!("recovery failed: {e}"),
             }
         }
+        // Settings ▸ General ▸ At Startup ▸ Show Home (the default): land on the Home
+        // screen (wordmark, import cards, recent projects, links) instead of opening the
+        // demo project or the editor workspace. Skipped when files were passed on the
+        // command line, when a control channel drives the app (automation expects the
+        // editor), or when --demo/--empty/--recover/--no-recover made an explicit choice.
+        let show_home = !startup_flag
+            && files.is_empty()
+            && control_port.is_none()
+            && !control_input_only
+            && recover.is_none()
+            && session.prefs.general.at_startup == "showHome";
         let mut app = CinemagridApp::new(session);
+        if show_home {
+            app.ui.mode = cinemagrid_ui_egui::state::Mode::Import;
+        }
         app.graphics_notice = notice;
         if recover == Some(false) {
             app.dialog = None;
